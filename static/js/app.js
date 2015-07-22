@@ -5,8 +5,9 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.proyectos',
   'myApp.contacto',
+  'myApp.conocimientos',
   'myApp.version'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/proyectos'});
+  $routeProvider.otherwise({redirectTo: '/'});
 }]);
