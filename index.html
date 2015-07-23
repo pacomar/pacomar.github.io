@@ -14,7 +14,7 @@
   </head>
   <body ng-app="myApp">
     <!-- Navigation -->
-    <nav class="light-blue lighten-1" role="navigation">
+    <nav class="light-blue darken-4 nav-header z-depth-5" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">Francisco Martínez</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#/proyectos">Proyectos</a></li>
@@ -29,7 +29,7 @@
       </div>
     </nav>
 
-    <div ng-view></div>
+    <main ng-view class="wrapper-contenido"></main>
 
     <footer class="page-footer orange">
       <div class="container">
@@ -73,9 +73,13 @@
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
     <script type="text/javascript" src="bower_components/materialize/js/materialize.min.js"></script>
 
     <script type="text/javascript" src="app.js"></script>
+
+    <script type="text/javascript" src="services/conocimientos.js"></script>
+
     <script type="text/javascript" src="controllers/proyectos.js"></script>
     <script type="text/javascript" src="controllers/contacto.js"></script>
     <script type="text/javascript" src="controllers/conocimientos.js"></script>

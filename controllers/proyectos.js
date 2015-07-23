@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.proyectos', [])
+angular.module('myApp.proyectosCtrl', [])
 
 .controller('ProyectosCtrl', [function() {
 

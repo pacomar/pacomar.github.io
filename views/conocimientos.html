@@ -1,7 +1,7 @@
 <div class="section no-pad-bot" id="index-banner">
     <div class="container">
         <br><br>
-        <h1 class="header center orange-text">Francisco Martínez</h1>
+        <h1 class="header center brown-text">Francisco Martínez</h1>
         <div class="row center">
             <h5 class="header col s12 light">Full Stack JS Developer</h5>
         </div>
@@ -9,109 +9,24 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" ng-controller="ConocimientosCtrl">
     <div class="section">
         <div class="row center">
             <h2>Conocimientos</h2>
         </div>
         <!--   Icon Section   -->
         <div class="row">
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">AngularJS</h2>
-                    <h5 class="center">1 año de experiencia</h5>
-
-                    <p class="light">He estado durante un año trabajando con AngularJS, 6 meses en una empresa y otros 6 recibiendo cursos de profundación en Angular para aprender mas de lo que hize en el proyecto de la empresa. Me ha gustado mucho el framework y me gustaria trabajar con el.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">nodeJS</h2>
-                    <h5 class="center">1 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">exprresJS</h2>
-                    <h5 class="center">1 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">HTML-HTML5</h2>
-                    <h5 class="center">3 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores aspernatur assumenda, dolorum odio optio qui quo sit voluptates voluptatibus!</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">CSS-CSS3</h2>
-                    <h5 class="center">3 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Django</h2>
-                    <h5 class="center">1 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Jquery</h2>
-                    <h5 class="center">2 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Python</h2>
-                    <h5 class="center">2 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Javascript</h2>
-                    <h5 class="center">3 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Bootstrap</h2>
-                    <h5 class="center">2 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Materialize</h2>
-                    <h5 class="center">1 años de experiencia</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
+            <div class="col s12 m4" ng-repeat="data in conocimientos">
+                <div class="card blue-grey darken-1 caja-conocimientos z-depth-3">
+                    <div class="card-content white-text">
+                        <span class="card-title red-text text-darken-4">{{data.nombre}}</span><br/>
+                        <span class="card-title">{{data.experiencia}}</span>
+                        <p>{{data.descripcion}}</p>
+                    </div>
+                    <div class="card-action pie-tarjeta-conocimiento">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
                 </div>
             </div>
 

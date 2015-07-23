@@ -3,9 +3,11 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.proyectos',
-  'myApp.contacto',
-  'myApp.conocimientos',
+  'ngResource',
+  'myApp.proyectosCtrl',
+  'myApp.contactoCtrl',
+  'myApp.conocimientosCtrl',
+  'myApp.conocimientosService',
   'myApp.version'
 ])
 .config(['$routeProvider', function($routeProvider) {

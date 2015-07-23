@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "nombre": "AngularJS",
+        "experiencia": "1 año de experiencia",
+        "descripcion": "He estado durante un año trabajando con AngularJS, 6 meses en una empresa y otros 6 recibiendo cursos de profundación en Angular para aprender mas de lo que hize en el proyecto de la empresa. Me ha gustado mucho el framework y me gustaria trabajar con el."
+    },
+    {
+        "id": 2,
+        "nombre": "nodeJS",
+        "experiencia": "1 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 3,
+        "nombre": "expressJS",
+        "experiencia": "1 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 4,
+        "nombre": "HTML5",
+        "experiencia": "3 años de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 5,
+        "nombre": "CSS",
+        "experiencia": "3 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 6,
+        "nombre": "Django",
+        "experiencia": "1 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 7,
+        "nombre": "Jquery",
+        "experiencia": "3 años de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 8,
+        "nombre": "python",
+        "experiencia": "2 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 9,
+        "nombre": "javascript",
+        "experiencia": "3 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 10,
+        "nombre": "bootstrap",
+        "experiencia": "2 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    },
+    {
+        "id": 11,
+        "nombre": "materalize",
+        "experiencia": "1 año de experiencia",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+    }
+]

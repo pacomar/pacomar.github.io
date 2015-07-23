@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('myApp.conocimientos', [])
+angular.module('myApp.conocimientosCtrl', [])
 
-.controller('ConocimientosCtrl', [function() {
-
+.controller('ConocimientosCtrl', ['$scope', 'ConocimientosService', function($scope, ConocimientosService) {
+        ConocimientosService.query(function(data){
+            $scope.conocimientos = data;
+        });
 }]);

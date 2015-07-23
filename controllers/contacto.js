@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.contacto', [])
+angular.module('myApp.contactoCtrl', [])
 
 .controller('ContactoCtrl', [function() {
 
