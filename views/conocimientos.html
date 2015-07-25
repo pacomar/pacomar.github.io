@@ -10,28 +10,18 @@
 </div>
 
 <div class="container" ng-controller="ConocimientosCtrl">
-    <div class="section">
-        <div class="row center">
-            <h2>Conocimientos</h2>
-        </div>
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m4" ng-repeat="data in conocimientos">
-                <div class="card blue-grey darken-1 caja-conocimientos z-depth-3">
-                    <div class="card-content white-text">
-                        <span class="card-title red-text text-darken-4">{{data.nombre}}</span><br/>
-                        <span class="card-title">{{data.experiencia}}</span>
-                        <p>{{data.descripcion}}</p>
-                    </div>
-                    <div class="card-action pie-tarjeta-conocimiento">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
+    <div id="columnas">
+        <div class="card blue-grey darken-1 caja-conocimientos z-depth-3 unidad" ng-repeat="data in conocimientos">
+            <div class="card-content white-text">
+                <span class="card-title red-text text-darken-4">{{data.nombre}}</span><br/>
+                <span class="card-title">{{data.experiencia}}</span>
+                <p>{{data.descripcion}}</p>
             </div>
-
+            <div class="card-action pie-tarjeta-conocimiento">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
         </div>
-
     </div>
     <br><br>
 

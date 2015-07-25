@@ -12,6 +12,11 @@ main {
 
 .caja-conocimientos{
   min-height: 300px;
+  text-align: justify;
+}
+
+.caja-conocimientos:first-child{
+  margin-top: 0;
 }
 
 .caja-conocimientos .card-title{
@@ -28,6 +33,46 @@ main {
 }
 
 .pie-tarjeta-conocimiento{
-  position: absolute;
   bottom: 0;
+}
+
+#columnas {
+  column-count: 3;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-gap: 15px;
+  -moz-column-gap: 15px;
+  -webkit-column-gap: 15px;
+  column-fill: auto;
+  -moz-column-fill: auto;
+  -webkit-column-fill: auto;
+}
+
+.unidad {
+  column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+@media (max-width: 1100px) {
+  #columnas {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  #columnas {
+    column-count: 1;
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  #logo-container {
+    right: 47px;
+    position: absolute;
+  }
 }
