@@ -10,6 +10,14 @@ main {
   flex: 1 0 auto;
 }
 
+.espacio_cabecera{
+  height: 70px;
+}
+
+.boton_ver_mas{
+  text-align: center;
+}
+
 .caja-conocimientos{
   min-height: 300px;
   text-align: justify;
@@ -40,9 +48,9 @@ main {
   column-count: 3;
   -moz-column-count: 3;
   -webkit-column-count: 3;
-  column-gap: 15px;
-  -moz-column-gap: 15px;
-  -webkit-column-gap: 15px;
+  column-gap: 0px;
+  -moz-column-gap: 0px;
+  -webkit-column-gap: 0px;
   column-fill: auto;
   -moz-column-fill: auto;
   -webkit-column-fill: auto;
@@ -52,6 +60,7 @@ main {
   column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   -webkit-column-break-inside: avoid;
+  margin: 25px;
 }
 
 @media (max-width: 1100px) {

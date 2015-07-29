@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.contactoCtrl',
   'myApp.conocimientosCtrl',
   'myApp.conocimientosService',
+  'myApp.proyectosService',
   'myApp.version'
 ])
 .config(['$routeProvider', function($routeProvider) {

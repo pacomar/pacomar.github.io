@@ -9,60 +9,60 @@
         "id": 2,
         "nombre": "nodeJS",
         "experiencia": "1 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "descripcion": "He realizado varios tutoriales sobre esta tecnoogia y he creado varias apis propias para que sean consumidas por mis proyectos en angular. Eran apis con autenticacion e implementado CRUD con rest."
     },
     {
         "id": 3,
         "nombre": "expressJS",
         "experiencia": "1 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "descripcion": "Framerwork que use para crear las api de nodeJS que mencione anteriomente. Realización de vários tutoriales existentes en la web."
     },
     {
         "id": 4,
         "nombre": "HTML5",
         "experiencia": "3 años de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "descripcion": "Empece con HTML4 en la universidad tras ver como era y que me gusto decidi seguir profundizando por mi cuenta lo que me llevo a realizar las practicas de empresa maquetando para una empresa, realizar la beca talentum de telefónica tambien maquetando. También en mi Trabajo Fin de Grado tuve que maquetar y actualemnte estoy de maquetador en VASS Digital. Paralelamente he estado realizando proyectos web propios."
     },
     {
         "id": 5,
         "nombre": "CSS",
-        "experiencia": "3 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "experiencia": "3 años de experiencia",
+        "descripcion": "Durante toda la experencia mencioanda anteriomente con html5 a estado siempre acompañado de CSS3."
     },
     {
         "id": 6,
         "nombre": "Django",
         "experiencia": "1 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "descripcion": "Tras un articulo que lei sobre Django decidí profundizar ya que me gusto bastante como funcionaba. Realize variso proyectos propios y base mi Trabajo fin de Grafo en este framework."
     },
     {
         "id": 7,
         "nombre": "Jquery",
         "experiencia": "3 años de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "descripcion": "A la vez que realizaba cada proyecto de web este iba acompañado de Jquery, tanto para efectos en el dom como para actualizaciones por ajax de la página."
     },
     {
         "id": 8,
         "nombre": "python",
-        "experiencia": "2 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "experiencia": "2 años de experiencia",
+        "descripcion": "Al principio aprendi python por mi cuenta para poder trabajar con django, tras descubirlo me encanto y segui estudiandolo, ya que es un lenguaje potenten de alto nivel que te permite hacer grandes cosas con poco codigo pero no muy optimizado ya que se suele compilar por debajo a C. He realizado tanto proyecto en django como script para que sean ejecutado directamente desde la consola para diversos calculos."
     },
     {
         "id": 9,
         "nombre": "javascript",
-        "experiencia": "3 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "experiencia": "3 años de experiencia",
+        "descripcion": "Uno de los 3 pilares basicos del desarrollo frontend, ahora tambien parte del back end. Por lo que lo he usado en cada proyecto realizado."
     },
     {
         "id": 10,
         "nombre": "bootstrap",
-        "experiencia": "2 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "experiencia": "2 años de experiencia",
+        "descripcion": "Al principio maquetaba sin herramientas pero tras descubrir bootstrap y su grid lo he utilizado en cada proyecto ya que ayuda mucho a la hora de maquetar para diseños responsives."
     },
     {
         "id": 11,
         "nombre": "materalize",
-        "experiencia": "1 año de experiencia",
-        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus."
+        "experiencia": "menos de 1 año de experiencia",
+        "descripcion": "Tras haber probado bootstrap pues vas mirando herrmientas aprecidas para saber si alguan te gusta mas, este fue el zaso de materialize, un framework que se basa ne material, libreria de compoenntes creada por google que tiene componentes muy interesantes. Tras ver algunos tutoriales y ejemplo me anime a usarlo, esta apgina esta realaizada con materialize"
     }
 ]

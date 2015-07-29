@@ -1,67 +1,21 @@
+<div class="espacio_cabecera"></div>
+
 <div class="container">
-    <div class="section">
-        <div class="row center">
-            <h2>Proyectos</h2>
+    <div id="columnas">
+        <div class="unidad" ng-repeat="proyecto in proyectos">
+            <div class="">
+                <h2 class="center light-blue-text">{{proyecto.nombre}}</h2>
+                <h5 class="center">{{proyecto.puesto}} - <br/> {{proyecto.experiencia}}</h5>
+
+                <p class="light">
+                    {{proyecto.descripcion}}
+                </p>
+
+                <div class="boton_ver_mas">
+                    <a class="waves-effect waves-light btn" href="#/proyectos/{{proyecto.id}}">Ver mas</a>
+                </div>
+            </div>
         </div>
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">JumpingToFame</h2>
-                    <h5 class="center">Full Stack PHP - 1 año</h5>
-
-                    <p class="light">Desempeñe la función de desarrollador full stack php usando el framework de codeigniter para php y foundation para el css y html. Desarrolle nuevas funciones y se renovaron los estilos de la antigua plataforma.
-                        <a href="http://jtf.tv/">Jumping to fame</a>.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Local2Enjoy</h2>
-                    <h5 class="center">Full Stack JS - 3 meses</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Grupo ISA</h2>
-                    <h5 class="center">Desarrollador Angular - 3 meses</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Proyectos Personales</h2>
-                    <h5 class="center">Desarrollador Andular - 1 año</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores aspernatur assumenda, dolorum odio optio qui quo sit voluptates voluptatibus!</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Proyectos Personales</h2>
-                    <h5 class="center">Maquetador - 2 años</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block caja-conocimientos">
-                    <h2 class="center light-blue-text">Proyectos Personales</h2>
-                    <h5 class="center">Desarrollador nodeJS - 1 año</h5>
-
-                    <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae labore laudantium maxime perferendis, quas sequi totam ut voluptas voluptatibus.</p>
-                </div>
-            </div>
-
-        </div>
-
     </div>
     <br><br>
 

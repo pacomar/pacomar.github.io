@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "nombre": "JumpingToFame",
+        "puesto": "Desarrollador Full Stack PHP",
+        "experiencia": "1 año",
+        "enlace": "http://jtf.tv",
+        "enlace_bonito": "JumpingToFame",
+        "descripcion": "He estado durante un año trabajando con AngularJS, 6 meses en una empresa y otros 6 recibiendo cursos de profundación en Angular para aprender mas de lo que hize en el proyecto de la empresa. Me ha gustado mucho el framework y me gustaria trabajar con el."
+    },
+    {
+        "id": 2,
+        "nombre": "Local2Enjoy",
+        "puesto": "Desarrollador Fulll Stack JS",
+        "experiencia": "3 meses",
+        "enlace": "http://jtf.tv",
+        "enlace_bonito": "local2enjoy",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consectetur cumque earum explicabo hic magni nihil quam quas rerum suscipit?"
+    },
+    {
+        "id": 3,
+        "nombre": "Grupo ISA",
+        "puesto": "Desarrollador AngularJS",
+        "experiencia": "becario, 3 meses",
+        "enlace": "http://jtf.tv",
+        "enlace_bonito": "Grupo ISA",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consectetur cumque earum explicabo hic magni nihil quam quas rerum suscipit?"
+    },
+    {
+        "id": 4,
+        "nombre": "Proyectos Personales",
+        "puesto": "Desarrollador web",
+        "experiencia": "2 años",
+        "enlace": "http://jtf.tv",
+        "enlace_bonito": "Personales",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consectetur cumque earum explicabo hic magni nihil quam quas rerum suscipit?"
+    },
+    {
+        "id": 5,
+        "nombre": "VASS Digital",
+        "puesto": "Maquetador web",
+        "experiencia": "1 mes (Actual)",
+        "enlace": "http://jtf.tv",
+        "enlace_bonito": "VASS Digital",
+        "descripcion": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, consectetur cumque earum explicabo hic magni nihil quam quas rerum suscipit?"
+    }
+]
