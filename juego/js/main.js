@@ -41,6 +41,50 @@ function comprueba_enemigos () {
 
 $(document).ready(function() {
 	$("div.fila-"+enemigo[0]+".columna-"+enemigo[1]).append("<div id='enemigo'></div>");
+	$("#boton_arriba").click(function(event) {
+		if (personaje[0]!=0){
+			var div_personaje = $("#personaje");
+			var antigua_casilla = div_personaje.parent();
+			antigua_casilla.html("");
+			personaje[0]=personaje[0]-1;
+			comprueba_enemigos ();
+			var nueva_casilla = $("div.fila-"+personaje[0]+".columna-"+personaje[1]);
+			nueva_casilla.append("<div id='personaje'></div>");
+		};
+	});
+	$("#boton_abajo").click(function(event) {
+		if (personaje[0]!=8){
+			var div_personaje = $("#personaje");
+			var antigua_casilla = div_personaje.parent();
+			antigua_casilla.html("");
+			personaje[0] = personaje[0]+1;
+			comprueba_enemigos ();
+			var nueva_casilla = $("div.fila-"+personaje[0]+".columna-"+personaje[1]);
+			nueva_casilla.append("<div id='personaje'></div>");
+		};
+	});
+	$("#boton_izquierda").click(function(event) {
+		if (personaje[1]!=0){
+			var div_personaje = $("#personaje");
+			var antigua_casilla = div_personaje.parent();
+			antigua_casilla.html("");
+			personaje[1] = personaje[1]-1;
+			comprueba_enemigos ();
+			var nueva_casilla = $("div.fila-"+personaje[0]+".columna-"+personaje[1]);
+			nueva_casilla.append("<div id='personaje'></div>");
+		};
+	});
+	$("#boton_derecha").click(function(event) {
+		if (personaje[1]!=8){
+			var div_personaje = $("#personaje");
+			var antigua_casilla = div_personaje.parent();
+			antigua_casilla.html("");
+			personaje[1] = personaje[1]+1;
+			comprueba_enemigos ();
+			var nueva_casilla = $("div.fila-"+personaje[0]+".columna-"+personaje[1]);
+			nueva_casilla.append("<div id='personaje'></div>");
+		};
+	});
 });
 
 $(document).keydown(function(e){
