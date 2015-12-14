@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>icon-graph</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Cuenta" sketch:type="MSArtboardGroup" transform="translate(-538.000000, -370.000000)" fill="#D1D1D1">
+            <g id="Buscador-copy-+-BUSCAR-+-Rectangle-20-copy-+-EXPORTAR-copy-+-Fill-1-copy-2-+-Rectangle-20-+-GRÁFICAS-+-Pie-chart" sketch:type="MSLayerGroup" transform="translate(529.000000, 360.000000)">
+                <g id="Rectangle-20-+-GRÁFICAS-+-Pie-chart" sketch:type="MSShapeGroup">
+                    <g id="Pie-chart" transform="translate(9.000000, 10.000000)">
+                        <path d="M12,7 C12,9.76156395 9.76122616,12 7,12 L7,7 L12,7" id="Fill-4"></path>
+                        <path d="M11,5.49998556 C11,2.46245336 8.53755957,0 5.49975451,0 C2.46232491,0 0,2.46245336 0,5.49998556 C0,8.53748887 2.46232491,11 5.49975451,11 L5.49975451,5.49998556 L11,5.49998556" id="Fill-1"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

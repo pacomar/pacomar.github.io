@@ -1,0 +1,21 @@
+.textCode {
+	display:none;
+}
+
+.pinpad {
+	display:block;
+	cursor: pointer;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.singCodeError {
+	display:block;
+	color:red;
+	padding:10px;
+	margin:0;
+}
+
+#externalSignButton {
+	display:none;
+}

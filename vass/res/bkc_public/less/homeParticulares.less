@@ -1,0 +1,366 @@
+.banner-img-header{
+    position: relative;
+    height: 500px;
+    background-size: cover!important;
+    background-position: center top;
+
+    .texto-banner-img-header{
+        position:relative;
+        height:500px; 
+        text-align: center;
+        .hipervinculos-login{
+            float: right;
+            margin-top: 30px;
+            a{
+                color:white;
+                margin-left: 30px;
+                font-family: 'bankintertext_bold';
+            }
+        }
+        h1{
+            text-align: left;
+            font-family: 'bankintertext_bold';
+            font-size: 52px;
+            clear: both;
+            color: white;
+            width: 60%;
+            margin-top: 30px;
+            float: left;
+
+        }
+        p{
+            text-align: left;
+            font-size: 19px;
+            font-family: 'bankintertext_regular';
+            color: white;
+            width: 50%;
+            float:left;
+            margin-top: 20px;
+        }
+        .reproducirVideo{
+            color:white;
+            position:absolute;
+            bottom:50px;
+            left: calc(~"50% - 100px");
+            i{
+                margin-right: 10px;
+                font-size: 30px;
+            }
+            span{
+                display: inline-block;
+                margin-top: 5px;
+                float: right;
+            }
+        }
+    }
+}
+.home-particulares{
+    .banner-img-header{
+        background: url('/res/bkc_public/img/homeParticulares.jpg');
+    }
+}
+@media (max-width:992px) {
+    .banner-img-header{
+        background-position: center!important;
+        background-size: cover!important;
+        .texto-banner-img-header{
+            h1{ 
+                width:100%;
+            }
+            p{
+                width:60%;
+            }
+        }
+    }
+}
+@media (max-width:767px) {
+    .banner-img-header{
+        .texto-banner-img-header{
+            p{
+                width:100%;
+            }
+        }
+    }
+}
+@media (max-width:550px) {
+    .banner-img-header{
+        height:400px;
+        .texto-banner-img-header{
+            h1{ 
+                font-size: 25px;
+            }
+            .reproducirVideo{
+                display:none;
+            }
+        }
+    }
+}
+
+// seccion tarjetas prestamo
+
+.container-tarjetas-prestamos{
+    padding:0;
+    background:white;
+    text-align: center;
+    p{
+        font-size: 16px;
+        font-family: 'source_sans_pro_regular';
+        margin-top: 20px;
+    }
+    a{
+        border: 2px solid #E30881;
+        border-radius: 5px;
+        margin-top: -2px;
+        margin-right: 0px;
+        padding: 10px 0px;
+        color: #E30881;
+        display: inline-block;
+        width: 200px;
+        margin-top: 20px;
+        &:hover{
+            background:#ffeef6;
+        }
+    }
+    .tituloTarjestasPrestamos{
+        font-family: bankintertext_bold;
+        font-size: 20px;
+        height:56px;
+    }
+    .tarjetasHome{
+        padding: 50px 110px;
+        h4{
+            font-size: 16px;
+            color:#64666b;
+            font-family: bankintertext_regular;
+            text-align: center;
+        }
+        img{
+            margin-top: 40px;
+            height:66px;
+        }
+    }
+    .prestamosHome{
+        background: #f2f2f2;
+        padding: 50px 110px;
+        h4{
+            font-size: 16px;
+            color:#64666b;
+            font-family: bankintertext_regular;
+            text-align: center;
+        }
+        img{
+            margin-top: 40px;
+            height:66px;
+        }
+        a{
+            border: 2px solid #E30881;
+            border-radius: 5px;
+            margin-top: -2px;
+            margin-right: 0px;
+            padding: 10px 0px;
+            color: #E30881;
+            display: inline-block;
+            width: 200px;
+            margin-top: 20px;
+
+        }
+    }
+}
+@media (max-width:1200px) {
+    .container-tarjetas-prestamos{
+        .prestamosHome{
+            padding: 50px 20px;
+        }
+        .tarjetasHome{
+            padding: 50px 20px;
+        }
+    }
+}
+@media (max-width:700px) {
+    .container-tarjetas-prestamos{
+        .prestamosHome{
+            width:100%;
+            padding: 50px 110px;
+            p{
+                height:auto;
+
+            }
+        }
+        .tarjetasHome{
+            width:100%;
+            height:auto;
+            padding: 50px 110px;
+            p{
+                height:auto;
+
+            }
+        }
+    }
+}
+@media (max-width:540px) {
+    .container-tarjetas-prestamos{
+        .prestamosHome{
+            padding: 50px ;
+            img{
+                margin-bottom: 0px;
+                margin-top: 20px;
+            }
+        }
+        .tarjetasHome{
+            padding: 50px;
+            img{
+                margin-top: 20px;
+                margin-bottom: 0px;
+            }
+
+        }
+    }
+}
+
+// seccion de opinion empresas Home
+
+.container-empresas-opinion{
+    background:#ebebeb;
+    padding:50px 0;
+    text-align: center;
+    h4{
+        font-size: 18px;
+        color:#64666b;
+        font-family: bankintertext_regular;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .iconos-logtipos{
+        text-align: center;
+        img{
+            width:6%;
+            margin-left: 3%;
+            margin-right: 3%; 
+        }
+    }
+    a{
+        border: 2px solid #E30881;
+        border-radius: 5px;
+        margin-top: -2px;
+        margin-right: 0px;
+        padding: 10px 20px;
+        color: #E30881;
+        display: inline-block;
+        margin-top: 20px;
+        &:hover{
+            background:#ffeef6;
+        }
+
+    }
+}
+@media (max-width:992px) {
+    .container-empresas-opinion{
+        .iconos-logtipos{
+            img {
+                width: 10%;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+    } 
+}
+@media (max-width:600px) {
+    .container-empresas-opinion{
+        .iconos-logtipos{
+            img {
+                width: 20%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        }
+    } 
+}
+@media (max-width:420px) {
+    .container-empresas-opinion{
+        .iconos-logtipos{
+            img {
+                width: 25%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+        }
+    } 
+}
+
+// seccion de contacto Home
+.container-contacto-home{
+    padding:50px 0;
+    text-align: center;
+    background:white;
+    h4{
+        font-size: 18px;
+        color:#64666b;
+        font-family: bankintertext_regular;
+        text-align: center;
+    }
+    p{
+        font-size: 24px;
+        color:#63656a;
+        font-family: bankintertext_bold;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .cajas-contacto{
+        padding:20px;
+        margin-top: 40px;
+        border:1px solid #ccc;
+        box-shadow: 2px 2px 2px #a7a7a6;
+        p{
+            font-size: 18px;
+            color:#64666b;
+            font-family: bankintertext_bold; 
+            text-align: center;
+        }
+        i{
+            font-size: 80px;
+            color:#adadad;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display:inline-block;
+        }
+        .telefonoCajaContacto{
+            color:#E30881;;
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width:700px) {
+    .container-contacto-home{
+        .col-xs-6{
+            width:100%;
+            padding:0 100px;
+        }
+    }
+}
+@media (max-width:530px) {
+    .container-contacto-home{
+        .col-xs-6{
+            width:100%;
+            padding:0 50px;
+        }
+    }
+}
+@media (max-width:420px) {
+    .container-contacto-home{
+        .col-xs-6{
+            width:100%;
+            padding:15px;
+            .cajas-contacto{
+                margin-top: 20px;
+                .tituloCajasContacto{
+                    font-size: 14px;
+                }
+                .telefonoCajaContacto {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

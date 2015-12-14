@@ -1,0 +1,273 @@
+
+.home-Empresas{
+    .banner-img-header{
+        background: url('/res/bkc_public/img/homeEmpresas.jpg');
+    }
+    .texto-banner-img-header{
+        .saberMas{
+            color:white;
+            clear: both;
+            float: left;
+            border: 1px solid white; 
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding:10px 15px;
+            -webkit-transition: all 0.5s ease; /* Safari */
+            transition: all 0.5s ease;
+            margin-top: 10px;
+            &:hover{
+                background:white;
+                color:#049224;
+                border-color: #049224;
+            }
+        }
+    }
+}
+@media (max-width:992px) {
+    .banner-img-header{
+        background-position: center!important;
+        background-size: cover!important;
+        .texto-banner-img-header{
+            h1{ 
+                width:100%;
+            }
+            p{
+                width:60%;
+            }
+        }
+    }
+}
+@media (max-width:767px) {
+    .banner-img-header{
+        .texto-banner-img-header{
+            p{
+                width:100%;
+            }
+        }
+    }
+}
+@media (max-width:550px) {
+    .banner-img-header{
+        height:400px;
+        .texto-banner-img-header{
+            h1{ 
+                font-size: 25px;
+            }
+            .reproducirVideo{
+                display:none;
+            }
+        }
+    }
+}
+
+// seccion automovil consumo soluciones
+
+.container-auto-solu-consu{
+    padding:0;
+    background:white;
+    text-align: center;
+    p{
+        font-size: 18px;
+        font-family: 'source_sans_pro_regular';
+        margin-top: 20px;
+    }
+    a{
+        border: 2px solid #049224;
+        border-radius: 5px;
+        margin-top: -2px;
+        margin-right: 0px;
+        padding: 10px 0px;
+        color: #049224;
+        display: inline-block;
+        width: 220px;
+        margin-top: 20px;
+        &:hover{
+            background:#F3FFEE;
+        }
+    }
+    .tituloTarjestasPrestamos{
+        font-family: bankintertext_bold;
+        font-size: 20px;
+        height: 56px;
+        color: black;
+    }
+    .genericoAutoSoluConsu{
+        padding: 50px 20px;
+        h4{
+            font-size: 16px;
+            color:#64666b;
+            font-family: bankintertext_regular;
+            text-align: center;
+        }
+        img{
+            margin-top: 40px;
+            height:100px;
+        }
+    }
+    
+}
+@media (max-width:1200px) {
+    .container-auto-solu-consu{
+        p{
+            height:80px;
+        }
+        .genericoAutoSoluConsu{
+            padding: 50px 20px;
+        }
+        
+    }
+}
+
+@media (max-width:992px) {
+    .container-auto-solu-consu{
+       .tituloTarjestasPrestamos{
+        height:80px;
+    }
+}
+}
+
+@media (max-width:767px) {
+    .container-auto-solu-consu{
+        padding:50px 0px;
+        .genericoAutoSoluConsu {
+            padding:20px;
+            width:100%;
+            p{
+                height:auto;
+            }
+        }
+    }
+    
+}
+
+
+
+// seccion tarjeta home Empresas
+.container-empresas-cooperativas{
+    background :url('/res/bkc_public/img/tajeta-home-empresas.png');
+    padding: 50px 0px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    h4{
+        font-size: 16px;
+        color:white;
+        font-family: bankintertext_regular;
+        text-align: center;
+    }
+    .tituloCooeperativas{
+        font-size: 21px;
+        color:white;
+        font-family: bankintertext_bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 18px;
+        color:white;
+        font-family: source_sans_pro_regular;
+        text-align: center;
+        display:inline-block;
+        width:70%;
+        line-height: 1.5;
+    }
+    .saberMasNosotrosEmpresaHome{
+        a{
+            padding: 10px 20px;
+            border:1px solid #fff;
+            margin-top: 20px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            color:white;
+            display:inline-block;
+            font-family: source_sans_pro_regular;
+            -webkit-transition: all 0.5s ease; /* Safari */
+            transition: all 0.5s ease;
+            &:hover{
+                border-color:#049224;
+                background:white;
+                color:#049224;
+            }
+        }
+    }
+}
+
+@media (max-width:600px) {
+    .container-empresas-cooperativas{
+        p{
+            width:100%;
+        }
+    }
+}
+
+
+// seccion de contacto Home Empresas
+.container-contacto-empresas{
+    padding:50px 0;
+    text-align: center;
+    background:white;
+    h4{
+        font-size: 18px;
+        color:#64666b;
+        font-family: bankintertext_regular;
+        text-align: center;
+    }
+    p{
+        font-size: 24px;
+        color:#63656a;
+        font-family: bankintertext_bold;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .cajas-contacto{
+        padding:20px;
+        margin-top: 40px;
+        border:1px solid #ccc;
+        box-shadow: 2px 2px 2px #a7a7a6;
+        width:600px;
+        display:inline-block;
+        p{
+            font-size: 18px;
+            color:#64666b;
+            font-family: bankintertext_bold; 
+            text-align: center;
+        }
+        i{
+            font-size: 80px;
+            color:#adadad;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display:inline-block;
+        }
+        .telefonoCajaContacto{
+            color:#E30881;
+            font-size: 40px;
+        }
+    }
+}
+@media (max-width:767px) {
+
+    .container-contacto-empresas{
+        .cajas-contacto{
+            width:100%;
+        }
+    }
+}
+@media (max-width:420px) {
+    .container-contacto-empresas{
+        width:100%;
+        padding:15px;
+        .cajas-contacto{
+            margin-top: 20px;
+            .tituloCajasContacto{
+                font-size: 14px;
+            }
+            .telefonoCajaContacto {
+                font-size: 30px;
+            }
+        }
+    }
+}

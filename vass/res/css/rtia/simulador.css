@@ -1,0 +1,137 @@
+body {
+	margin:0 auto;
+	padding-top:20px;
+	width:800px;
+}
+
+legend {
+	color:white;
+	background-color:#5f4c4c;
+	padding:10px;
+}
+
+label {
+	display:block;
+}
+
+
+#formulario, #resultados {
+	width:100%;
+	border-radius:10px;
+	background-color:white;
+	margin-bottom:20px;
+}
+
+.fieldform {
+	padding:10px;
+	float:left;
+	width:30%;
+}
+
+#resultados {
+	display:none;
+}
+
+.clean {
+	clear:both;
+}
+
+.parametros .button {
+	color:white;
+	background-color: #ff6c00;
+	border-radius:5px;
+	float:right;
+	margin:0;
+	padding:5px;
+}
+
+.button {
+	margin:0;
+	color:white;
+	background-color: #5f4c4c;
+	border-radius:5px;
+	float:right;
+	padding:5px;
+}
+
+a:hover {
+	color: white !important;
+	text-decoration: underline;
+}
+
+.parametros {
+	width:99%;
+	padding:10px;
+}
+
+.parametros legend {
+	color:#ff6c00;
+	background-color:white;
+	border-bottom:2px solid #ff6c00;
+	font-size: 1em;
+	margin:0;
+	
+}
+
+.submit {
+	margin-top:20px;
+	border-top:2px solid #5f4c4c;
+	height:52px;
+}
+
+.submit .button {
+	margin:10px 15px 5px 0px;
+}
+
+.inputParamValues {
+	margin-left:5px;
+}
+
+.removeclass {
+	margin-left:5px;
+	color:#5f4c4c;
+	font-size:1em;
+	font-weight:bold;
+}
+
+#InputsWrapper div {
+	margin-bottom:10px;
+}
+
+#ofertas {
+	overflow-x:scroll;
+}
+
+#errorSimulador {
+	display:none;
+	color:white;
+	background-color:#ff7d7d;
+	padding:5px;
+	margin:0px 10px;
+	border-radius:5px;
+}
+
+.textParams {
+	padding:0px 10px;
+	margin-bottom:10px;
+	background-color:#ede6e6;
+	border-radius:5px;
+}
+
+.textParams p {
+	font-size: 0.8em;
+	padding:0;
+	margin:0;
+	color:#3a3030;
+}
+
+#warningParams {
+	display:none;
+	background-color:#fffcaf;
+	border-radius:5px;
+	border:1px solid #3a3030;
+	color:#3a3030;
+	font-weight:bold;
+	padding:5px;
+	margin-bottom:10px;
+}

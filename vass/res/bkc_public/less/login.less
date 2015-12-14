@@ -1,0 +1,168 @@
+.wrapper-login{
+	background: url('../img/imagen_login.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 640px;
+	top: 0;
+	.login_box{
+		width: 420px;
+		height: 390px;
+		background-color: white;
+		float: left;
+		margin-left: calc(~"50% - 210px");
+		margin-top: 110px;
+		border-radius: 10px;
+		padding: 10px;
+		box-shadow: 1px 1px 1px gray;
+		.title_login_box{
+			text-align: left;
+			font-size: 28px;
+			font-family: "bankintertext_bold";
+			padding: 10px 35px;
+		}
+		.formulario_login_box{
+			padding: 0px 35px;
+			.label_login_box{
+				width: 100%;
+				display: block;
+				color: gray;
+				font-family: 'source_sans_pro_light';
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			.input_login_box{
+				width: 100%;
+				border: none;
+				border-bottom: 1px solid gray;
+				margin-bottom: 10px;
+				font-family: 'source_sans_pro_light';
+				&:focus{
+					outline: none;
+					border-bottom: 1px solid #049224;
+				}
+			}
+			.button_login_box{
+				width: 100%;
+				background-color: white;
+				border: 1px solid #E30881;
+				border-radius: 4px;
+				font-family: 'source_sans_pro_light';
+				padding: 13px 0;
+				color: #E30881;
+				margin-top: 20px;
+				margin-bottom: 20px; 
+				&:hover{
+					background: #ffeef6;
+				}
+			}
+			.link_login_box{
+				color: #049224;
+				width: 100%;
+				text-align: center;
+				display: inline-block;
+				margin-top: 10px;
+				font-family: 'source_sans_pro_light';
+				font-size: 16px;
+			}
+		}
+	}
+	.hipervinculos-login{
+		float:right;
+		margin-right: 50px;
+		margin-top: 30px;
+		a{
+			color:white;
+			margin-left: 30px;
+			font-family: 'bankintertext_bold';
+		}
+	}
+}
+
+.wrapper-loginFranjaRosa{
+	background: #E30881;
+	opacity: 0.9;
+	margin-top: -65px;
+	p{
+		&:first-child{
+			font-family: "bankintertext_bold";
+			font-size: 18px;
+			margin-right: 20px;
+		}
+		color:white;
+		float:left;
+		margin: 20px 0;
+		height:25px;
+		font-family: "source_sans_pro_regular"
+	}
+	a{
+		color: white;
+		float: right;
+		margin: 9px 0;
+		font-family: "source_sans_pro_regular";
+		font-size: 16px;
+		padding: 10px;
+		border: 1px solid white;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		width: 150px;
+		text-align: center;
+
+	}
+}
+@media (max-width:1200px){
+	.wrapper-login{
+		.login_box{
+			margin-top: 60px;
+		}
+	}
+}
+@media (max-width:992px){
+	.wrapper-loginFranjaRosa{
+		margin-top: 0px;
+		text-align: center;
+		a{
+			margin-top: 0;
+			float: none; 
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+	}
+}
+@media (max-width:767px){
+	.hipervinculos-login{
+		display:none;
+	}
+	.wrapper-login{
+		min-height: 530px;
+	}
+	.wrapper-loginFranjaRosa{
+		opacity: 1;
+		text-align: left;
+		p{
+			width:100%;
+			margin-bottom: 0px;
+		}
+		a{
+			margin-top: 40px;
+			float:left;
+		}
+	}
+}
+@media (max-width:440px){
+
+	.wrapper-login{
+		.login_box{
+			width: 100%;
+			margin-left: 0;
+			margin-top: 70px;
+		}
+	}
+
+	.wrapper-login .login_box .title_login_box{
+		text-align: left;
+		font-size: 17px;
+		font-family: "bankintertext_bold";
+		padding: 10px 35px;
+	}
+}

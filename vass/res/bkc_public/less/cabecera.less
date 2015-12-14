@@ -1,0 +1,153 @@
+
+header{
+	background-color: #fff;
+    background: white;
+    display: inline-block;
+    width: 100%;
+    padding: 0 50px;
+    margin-bottom: -5px;
+    .navbar{
+        float: left;
+        width: 100%;
+        margin-bottom: 0px;
+        img{
+            margin: 0px!important;
+        }
+        ul{
+            float:right;
+            margin-top:30px;
+            li{
+                margin-right: 10px;
+                a{
+                    color:#8a8a8a;
+                    padding:5px;
+                    font-family: 'bankintertext_regular';
+                }
+                &:last-child{
+                    border-radius: 5px;
+                    margin-top:-2px;
+                    margin-right: 0px;                    
+
+                }
+            }
+            
+
+            li.empresas{
+                border-left: 2px solid #ccc;
+                margin-right: 20px;
+            }
+        }
+        .navbar-brand {
+            float: left;
+            padding: 15px 15px;
+            font-size: 20px;
+            line-height: 22px;
+        }
+        .navbar-toggle {
+            padding: 14px 10px;
+            .icon-bar{
+                background:#8a8a8a;
+                display: block;
+                width: 26px;
+                height: 4px;
+                border-radius: 1px;
+            }
+        }
+    }
+}    
+
+// Cabecera Empresa
+.cabeceraEmpresa{
+    .navbar{
+        ul{
+            li{
+             &.particulares{
+                a{
+                    color:#ccc;
+                }
+            }
+            &.empresas{
+                a{
+                    color:#049224;
+                }
+                a:hover{
+                    color:#049224;
+                }
+                
+            }
+            
+            &:last-child{
+                border: 2px solid #049224;
+                border-radius: 5px;
+                margin-top:-2px;
+                margin-right: 0px; 
+                a{
+                    color:#049224;
+                }                   
+
+            }
+        }
+    }
+}
+}
+
+//  Cabecera Particulares
+.cabeceraParticulares{
+    .navbar{
+        ul{
+            li{
+             &.empresas{
+                a{
+                    color:#ccc;
+                }
+            }
+            &.particulares{
+                a{
+                    color:#E30881;
+                }
+                a:hover{
+                    color:#E30881;
+                }
+            }
+            
+            &:last-child{
+                border: 2px solid #E30881;
+                border-radius: 5px;
+                margin-top:-2px;
+                margin-right: 0px; 
+                a{
+                   color:#E30881;
+               }                   
+               
+           }
+       }
+   }
+}
+}
+
+@media (max-width:767px) {
+    header{
+        .navbar{
+            ul{
+                width: 100%; 
+                float: none;
+                margin: 0px;
+                padding-bottom: 20px;
+                li{
+                    a{
+                        text-align: center;
+                        padding:15px 10px;
+                    }
+                }
+                li.empresas{
+                    border-left: none;
+                    a{
+                        color:#ddd;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

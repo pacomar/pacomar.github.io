@@ -1,0 +1,55 @@
+@charset "utf-8";
+/***** Print styles *****/
+body > header *,
+body > article {margin: 0; padding: 0;}
+html,
+body {width: 100%;}
+html {font-size: 10pt!important;}
+body {padding-top: 0; color: #000; background-color: #FFF; font-family: Verdana, Arial, Helvetica, sans-serif;}
+article * {background-color: transparent;}
+body > header .area_cliente a,
+header nav,
+aside,
+.noprint,
+body > footer,
+a.button,
+input[type="submit"],
+input[type="reset"],
+button[type="submit"],
+button[type="reset"],
+img[alt~="ventana"],
+.notes,
+div.slider {display: none!important;}
+body > header {margin-bottom: 30px;}
+body > header .logout,
+body > header .login {visibility: hidden;}
+body > header .area_cliente {width: auto;}
+body > header .logout span {visibility: visible; max-width: 100%; margin-top: -1em;}
+article h1 {font-size: 24pt; margin-left: 0;}
+article.nomenu h1 {margin-left: 0;}
+article section,
+article section > .panel {margin-left: 0; padding-left: 0;}
+img {max-width: 500px;}
+article > div.panel {padding-left: 0;}
+table,
+table tr td,
+table tr th {border: 1px solid #CECECE!important;}
+table caption {border: none!important;}
+table thead th,
+table thead td,
+table tfoot th {color: #000;}
+table th,
+table td {border-left: none;}
+table tr td,
+table tr th {padding: 5px!important;}
+table tr:nth-of-type(even) td,
+table tr.even td,
+table tr:nth-of-type(even) th,
+table tr.even th,
+table tr:nth-of-type(odd) td,
+table tr.even td,
+table tr:nth-of-type(odd) th,
+table tr.even th {border-bottom: 1px solid #CECECE;}
+.popup .important.w60pc.warning {width: 100%!important;}
+body.popup article > h1 {margin-left: 0;}
+.dropdown-panel {display: block!important;}

@@ -1,0 +1,9 @@
+@charset "utf-8";
+/***** DW RESPONSIVE STYLES *****/
+.sr-only {display: none;}
+.navbar-nav {width: 100%;}
+.breadcrumb li {display: inline}
+footer nav {clear: both;}
+footer nav ul.footerLinks {float: left;}
+footer nav ul.footerLinks li {display: inline;}
+

@@ -1,0 +1,40 @@
+@import "../../../arq/styles/partials/bootstrap/mixins.less";
+
+//_____________________________________________________________Modificaciones 
+// Alerts
+// -------------------------creamos una nueva variable para el color de enlace del alert-info
+.alert-variant-info-link( @link-color) {
+  color: @alert-info-link;
+}
+
+// Progress bars
+// -------------------------
+.progress-bar-variant(@color) {
+  background-color: @color;
+  .progress-striped & {
+    #gradient > .striped();
+  }
+}
+
+
+// Panels
+// -------------------------
+.panel-variant(@border; @heading-text-color; @heading-bg-color; @heading-border;@footer-bg-color) {
+  border-color: @border;
+
+  & > .panel-heading {
+    color: @heading-text-color;
+    background-color: @heading-bg-color;
+    border-color: @heading-border;
+
+    + .panel-collapse .panel-body {
+      border-top-color: @border;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse .panel-body {
+      border-bottom-color: @border;
+      background-color: @footer-bg-color;//modificada
+    }
+  }
+}

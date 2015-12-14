@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+.reader {display: block !important; position: absolute !important; width: 100em !important; overflow: auto !important; left: -1000em !important; margin: 0 !important; border: none !important; padding: 0 !important; height: 0 !important; line-height: 0 !important;}
+/* Mapa inmobiliario */
+.realstate-map-tooltip{background:#FFF;background:rgba(255,255,255,.9);border-radius:3px;border:1px solid #FFF;padding:5px 10px;}
+.realstate-map-header{font-weight:bold;}
+
+/* Estilos específicos carrusel */
+.slider{border:1px solid #E6E6E6;width:690px;height:345px;padding:0;}
+.slider ul,.slider li,.slider figure,.slider img{margin:0;padding:0;list-style:none;display:block;height:345px;}
+.slider li:before{content:"";}
+a.slider-tab{display:block;}
+.slider-counter{position:absolute;z-index:77;left:15px;bottom:15px;width:150px;height:19px;}
+.slider-counter ul{margin-top: 6px;}
+.slider-counter li{float:left;width:19px;height:19px;margin-right:5px;}
+.slider-counter a{display:block;}
+.slider-control-previous,.slider-control-next,.slider-control{display:none;position:absolute;z-index:99;top:150px;}
+.slider-control-previous{left:0px;}
+.slider-control{left:323px;}
+.slider-control-next{left:650px;}
+.slider:hover .slider-control-previous,.slider:hover .slider-control,.slider:hover .slider-control-next {display:block;}
+.control-previous,.control-next,.control-play,.control-pause { display: block;}
+.slider .control-previous img, .slider .control-next img, .slider .control-play img, .slider .control-pause img {height:44px; width:44px;}
+.slider figcaption{position:absolute;bottom:0;left:0;padding:10px;width:670px;color:#FFF;text-shadow:0 1px 0 #000;background:#333;background:rgba(0,0,0,.5);text-align:right;}
+.slider.slider-tabs {width: 490px;}
+.slider .slider-counter img {width: 19px; height: 19px;}
+.slider .counter-tabs{left:490px;position:relative;width:200px;bottom:0;}
+.slider-counter.counter-tabs ul, .slider-counter.counter-gallery ul {margin-top: 0;}
+.slider .counter-tabs li{display:block;float:none;width:auto;border-radius:0;text-indent:0;margin:0;border:1px outset #F6F6F6;}
+.slider-counter.counter-tabs li{background-image: none;}
+.slider .counter-tabs li.active-slide{background:#FF0099;font-weight:bold;}
+.slider .counter-tabs a{color:#000;text-decoration:none;padding:9px;}
+.slider .counter-tabs .active-slide a{color:#FFF;}
+.slider .counter-tabs figcaption{text-align:left;}
+.gallery{padding-bottom:109px;}
+.gallery figcaption{text-align:left;}
+.gallery .counter-gallery{width:670px;height:100px;left:0;padding:10px;background:#000;top:345px;}
+.gallery .counter-gallery ul{overflow:hidden;}
+.gallery .counter-gallery li{width:auto;height:auto;border-radius:0;text-indent:0;margin:0 10px 0 0;}
+.gallery .counter-gallery li:last-child{margin:0;}
+.gallery .counter-gallery li a{border:2px solid #000;}
+.gallery .counter-gallery li.active-slide a{border-color:#FF0099;}
+.gallery .counter-gallery a:focus{border-color:#FFF;}
+.gallery .counter-gallery li img{line-height:1;width:182px;height:85px;}
+.gallery-controls-previous,.gallery-controls-next{position:absolute;z-index:99;top:385px;}
+.gallery-controls-previous{left:0;}
+.gallery-controls-next{left:660px;}
+.gallery-controls-previous a, .gallery-controls-next a {display: block;}
+.gallery-controls-previous a img, .gallery-controls-next a img {width: 22px; height: 22px;}	
+.gallery-control-previous,.gallery-control-next{background:#333;background:rgba(0,0,0,.5);padding:5px;color:#FFF;text-shadow:0 1px 0 #000;text-decoration:none;font-size:24px;font-family:MS Serif;}	
+.gallery-counter{height:355px;}
+.gallery-number{position:relative;z-index:77;left:5px;top:448px;width:690px;height:15px;padding:0;color:#FFF;}

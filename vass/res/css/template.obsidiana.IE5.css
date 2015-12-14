@@ -1,0 +1,98 @@
+﻿@charset "utf-8";
+/***** GRID LAYOUT *****/
+/* General basic CSS */
+/* 1st column basic CSS */
+/* 2st column advanced CSS */
+/* 3rd column advanced CSS */
+/* popup advanced CSS */
+/* warning & error pages */
+
+/***** PAGE LAYOUT *****/
+/* Basic CSS */
+/* Advanced CSS */
+
+/***** GENERAL CONTENT *****/
+/* Basic CSS */
+/* Advanced CSS */
+
+/***** HEADER CONTENT *****/
+
+/* General basic CSS */
+/* Tabs basic CSS */
+/* Tabs advanced CSS */
+
+/***** HEADER CONTENT II *****/
+/* General basic CSS */
+/* General advanced CSS */
+/* Tabs basic CSS */
+/* Tabs advanced CSS */
+
+/***** ASIDE CONTENT *****/
+/* Menu basic CSS */
+/* Menu advanced CSS */
+/* Submenu basic CSS */
+/* General Login */
+
+/***** FOOTER CONTENT *****/
+/* Basic CSS */
+/* Advanced CSS */
+
+/***** FOOTER CONTENT II *****/
+/* Basic CSS */
+
+/***** WIDGETS *****/
+/* Acordeón */
+/* Notas de especificaciones */
+/* Tooltips */
+/* Modal tooltip */
+/* Aviso de bloqueo de maýusculas */
+/* Calendario */
+/* Basic dropdowns */
+/* Accordion */
+
+/* Clases añadidas para tablas dinámicas */
+/*.sortable tr:nth-child(even) th,.sortable tr:nth-child(even) td {background: transparent;}*/
+/* Estilos específicos carrusel */
+.slider figcaption{background:#333;filter:alpha(opacity=75);width:100%;}
+.slider-none .slider-counter{height:25px;top:312px;}
+.slider-control-previous {display:block;}
+.slider-control {display:block;}
+.slider-control-next {display:block;}	
+.gallery-counter {height:466px;}
+
+/***** ARTICLE CONTENT *****/
+/* General basic CSS */
+/* General Headers */
+/* General Widths */
+/* width % */
+/* width em */
+/* width px */
+/* Advanced Widths */
+/* General Lists */
+/* Advanced Lists */
+/* General Specific lists */
+/* Advanced Specific lists */
+
+/* BORDER TEMPLATE/CONTENT */
+
+/***** ARTICLE CONTENT *****/
+/* General Text & Links */
+/* Advanced Text & Links */
+/* General Default table */
+/* Advanced Default table */
+/* General Specific tables */
+/* Advanced Specific tables */
+/* General Default Form */
+/* Advanced Default Form */
+/* dl width in % */
+/* dl width in em */
+/* dl width in px */
+/* General Form elements */
+/* Advanced Form elements */
+/* General Specific forms */
+/* Advanced Specific forms */
+/* Forms errors */
+/* General Boxes */
+/* Advanced Boxes */
+
+/***** PRINT *****/

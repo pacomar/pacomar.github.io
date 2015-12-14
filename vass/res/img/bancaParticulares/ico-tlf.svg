@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M11.3837891,15.96875C13.9941406,16.2519531,15.671875,14.5771484,16,12.0429688
+			c0,0-2.6386719-1.7177734-3.9560547-2l-2.0810547,2.1308594c0,0-1.1201172,0.0498047-3.5722656-2.4609375
+			C3.9379883,7.2011719,3.9868164,6.0541992,3.9868164,6.0541992l1.7919922-1.8344727
+			c-0.2998047-1.859375-1.3505859-4.7988281-3.4057617-4.1196289C0.347168,0.7529297-0.4008789,3.6772461,0.2036133,5.4912109
+			C3.1948242,14.1386719,10.2949219,15.8857422,11.3837891,15.96875z"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<rect x="-5" y="-5" clip-path="url(#SVGID_2_)" fill-rule="evenodd" clip-rule="evenodd" fill="#D6D6D6" width="26" height="26"/>
+</g>
+</svg>

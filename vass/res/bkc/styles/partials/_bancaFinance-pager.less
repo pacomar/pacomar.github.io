@@ -1,0 +1,62 @@
+@import "../../../arq/styles/partials/bootstrap/pager.less";
+
+//
+// Pager pagination
+// --------------------------------------------------
+
+
+.pager {
+  padding-left: 0;
+  margin: @line-height-computed 0;
+  list-style: none;
+  text-align: center;
+  .clearfix();
+  li {
+    display: inline;
+    > a,
+    > span {
+      display: inline-block;
+      padding: 5px 14px;
+      background-color: none;
+      border: 0;
+      border-radius:0;
+    }
+
+    > a:hover,
+    > a:focus {
+      text-decoration: none;
+      background-color: @pagination-hover-bg;
+    }
+  }
+
+  .next {
+    > a,
+    > span {
+      float: right;
+    }
+  }
+
+  .previous {
+    > a,
+    > span {
+      float: left;
+    }
+  }
+
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+      color: @pager-disabled-color;
+      background-color: @pagination-bg;
+      cursor: not-allowed;
+    }
+  }
+
+}
+.border-pager{width:50px;height:50px;border:solid 2px #c2c5c9;border-radius:4px;padding:10px;}
+a.link-next span,
+a.link-prev span{color:#e30881 !important;}
+a.link-next span:hover,
+a.link-prev:hover span{color:#e30881 !important;}

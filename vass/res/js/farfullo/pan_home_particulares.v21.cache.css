@@ -1,0 +1,621 @@
+/***************************** pan_portal.css (s�lo BK particulares)****************************/
+
+/* --- INI ESTILOS GENERALES DE REFERENCIA --- */
+.img_ventananueva_01 {margin-left:0.4em; margin-right:1em; vertical-align:middle !important; vertical-align:bottom}
+.img_ventananueva_00 {margin-left:0.4em; margin-right:0.2em; vertical-align:middle !important; vertical-align:bottom}
+
+.txt_oculto_01 {display:none}
+
+/* -- Titulo pagina negro--*/
+
+.cab_titulopagina_01 {text-align: left; margin:0 0 15px 0}
+.cab_titulopagina_01 .cab_sup {border-bottom:1px solid #FF7E00; text-align: left}
+.cab_titulopagina_01 .cab_sup .cab_titulo h1 {font-weight:bold;margin-left:0px !important; margin-left:-1px}
+.cab_titulopagina_01 .cab_sup .cab_enlace {float:right;}
+.cab_titulopagina_01 .cab_sup .cab_enlace a{color:#FF7E00; font-weight:bold; text-decoration: underline}
+.cab_titulopagina_01 .cab_inf {text-align: right}
+.cab_titulopagina_01 .cab_inf .cab_pag {font-size:0.9em}
+.cab_titulopagina_01 .cab_inf .cab_pag .numero{color:#FF7E00; font-weight:bold;}
+.cab_titulopagina_01 .cab_sup_01 {text-align: left}
+.cab_titulopagina_01 .cab_sup_01 .cab_titulo h1 {font-weight:bold;margin-left:0px !important; margin-left:-1px;font-size:0.9em}
+.cab_titulopagina_01 .cab_sup_01 .cab_enlace {float:right;}
+.cab_titulopagina_01 .cab_sup_01 .cab_enlace a{color:#FF7E00; font-weight:bold; text-decoration: underline}
+
+
+/* --- caja aviso --- */
+
+.caj_aviso_01 {padding:6% 23% 6% 23%}
+.caj_aviso_01 .caj_titulo_01 {background-color:#FF7E00; text-align:center; font-size:67%; vertical-align:middle; margin:0; color:#FFF; font-weight:bold; height:auto !important; line-height:20px; height:20px; min-height:20px}
+.caj_aviso_01 .caj_titulo_01 h1 {vertical-align:middle; margin:0; color:#FFF; font-weight:bold; height:auto !important; line-height:20px; height:20px; min-height:20px}
+.caj_aviso_01 .caj_texto_01 {border:1px solid #FF7E00; padding:40px 20px 40px 20px; font-size:67%; line-height:20px}
+.caj_aviso_01 .caj_texto_01 div {text-align:left}	
+.caj_aviso_01 .caj_texto_01 span {font-weight:bold}
+.caj_aviso_01 .caj_texto_01 .enlace_01 {font-weight:bold; text-align:center; margin-top:10px}
+.caj_aviso_01 .caj_texto_01 .enlace_01 a {color:#FF7E00}
+
+.caj_aviso_01 .caj_texto_01 .enlace_02 {font-weight:bold; text-align:right; margin-top:10px}
+.caj_aviso_01 .caj_texto_01 .enlace_02 a {color:#FF7E00}
+
+.caj_aviso_01 .pie_caj_01 {border-top:5px solid #FF7E00; margin-top:1px}
+
+.a_content2 .caj_aviso_01 .caj_titulo_01 {background-color:#FF7E00; text-align:center; font-size:100%; vertical-align:middle; margin:0; color:#FFF; font-weight:bold; height:auto !important; line-height:20px; height:20px; min-height:20px; margin-left:0px !important; margin-left:-3px}
+.a_content2 .caj_aviso_01 .caj_texto_01 {border:1px solid #FF7E00; padding:40px 20px 40px 20px; font-size:100%; line-height:20px}
+
+.caj_aviso_04 {width:100%; margin:15px 0 15px 0; width:400px; text-align:center}
+.caj_aviso_04 .caj_content {background-color:#c3dff5; padding:10px; text-align:center}
+.caj_aviso_04 .corner_top {background-color:#c3dff5; border-color:#c3dff5}
+.caj_aviso_04 .corner_bot {background-color:#c3dff5; border-color:#c3dff5}
+
+.caj_aviso_03 {width:100%; margin:15px 0 15px 0; width:400px; text-align:center}
+.caj_aviso_03 .caj_content {background-color:#feff99; padding:10px; text-align:center}
+.caj_aviso_03 .corner_top {background-color:#feff99; border-color:#feff99}
+.caj_aviso_03 .corner_bot {background-color:#feff99; border-color:#feff99}
+
+/* -- Pie --*/
+
+.pie_content_01 {border-top:1px solid #FF7E00; text-align:left; padding: 5px 5px 0 0}
+
+.par_notapie_01 {margin-top:21px}
+.par_notapie_01 .par_notapie_nota {margin-top:10px; font-size:0.9em; padding-left:20px;display:table}
+.par_notapie_01 .indice_nota {margin-left:-20px;width:20px;display:table-cell}
+.par_notapie_01 .contenido_nota {display:table-cell}
+DIV[class=par_notapie_01] .par_notapie_nota {padding-left:0px;}
+
+.par_superindice_01 {font-family:Courier new; font-size:.9em !important; font-size:1em}
+
+.par_subtitulo_01 .par_subtitulo_titulo{color:#000; font-weight:bold; margin:10px 0 10px 0}
+
+/* --- caja login --- */
+
+.caj_login_01 {padding:5% 17% 4% 17% !important;padding:5% 15% 4% 15%}
+.caj_login_01 .caj_titulo_01 {background-color:#FF7E00; text-align:center; vertical-align:middle; margin:0; color:#FFF;height:auto !important; line-height:20px; height:20px; min-height:20px}
+.caj_login_01 .caj_titulo_01 h1 {font-size:0.9em;font-weight:bold;}
+.caj_login_01 .caj_texto_01 {border:1px solid #FF7E00; padding:15px 20px 0px 20px;line-height:20px}
+.caj_login_01 .caj_texto_01 img{margin:10px 0 0 10px}
+		
+.caj_login_01 .caj_texto_01 #caj_login_01 {margin:0 0 0 21px}
+.caj_login_01 .caj_texto_01 #caj_login_01 div {margin:0 0 10px 0}
+		
+.par_instruccion_01 {font-family: Verdana, Arial, Helvetica,sans-serif;color:#000}
+.par_litform_02 {font-family: Verdana, Arial, Helvetica,sans-serif;font-weight:bold;color:#000}
+		
+.caj_login_01 .caj_texto_01 #caj_login_01 div #lbl_user_01{margin-right:50px}
+.caj_login_01 .caj_texto_01 #caj_login_01 div #lbl_pwd_01{margin-right:26px}
+
+.caj_login_01 .caj_texto_01 #caj_login_02 {margin:0 0 10px 22px !important;margin:0 0 10px 18px}
+.caj_login_01 .caj_texto_01 #caj_login_02 input{margin:0 10px 0 0}
+		
+.caj_login_01 .caj_texto_01 .caj_dcha_01 {text-align:right;margin-bottom:5px;float:right !important;float:none}
+.caj_login_01 .caj_texto_01 .caj_dcha_02 {text-align:right;margin-bottom:5px}
+.caj_login_01 .caj_texto_01 .caj_dcha_01 .caj_dcha_bot_01{float:right !important; float:none}	
+.caj_login_01 .caj_texto_01 .caj_dcha_01 .caj_dcha_bot_01 object,
+.caj_login_01 .caj_texto_01 .caj_dcha_01 .caj_dcha_bot_01 img {width:12px; height:16px; margin-right:7px; margin-top:2px; vertical-align:top !important}
+							
+.caj_login_01 a.enl_login_01 {color:#FF7E00}
+		
+.caj_login_01 .pie_caj_01 {border-top:5px solid #FF7E00; margin-top:1px}
+		
+.a_content2 .caj_login_01 .caj_titulo_01 {background-color:#FF7E00; text-align:center; vertical-align:middle; margin:0; color:#FFF; font-weight:bold; height:auto !important; line-height:20px; height:20px; min-height:20px; margin-left:0px !important; margin-left:-3px}
+.a_content2 .caj_login_01 .caj_texto_01 {border:1px solid #FF7E00; padding:15px 20px 0px 20px;}
+
+.for_instruccion_01 {height:auto !important;height: 1%;background:url('/www/cacheables/img/img_css_marca/bullet_v2007.v1.cache.gif') no-repeat left 0.7em}
+.for_instruccion_01 .for_instruccion_texto_01 {margin:0 0 15px 15px}
+
+.caj_login_01 .caj_texto_01 img.img_bloq_01{float:left;margin:8px 0 0 20px}
+.caj_login_01 .caj_texto_01 .txt_login_02{margin:0 0 10px 30px}
+			
+.caj_login_01 .caj_texto_01 .txt_bloq_01 {text-align:left}
+.caj_login_01 .caj_texto_01 .txt_bloq_01 span{font-weight:bold}
+						
+.caj_login_01 a.enl_login_02 {color:#FF7E00;font-weight:bold}
+
+/* --- FIN ESTILOS GENERALES DE REFERENCIA --- */
+
+/* --- INI ESTILOS COMUNES PARTICULARES EMPRESAS BROKER WEB CORPORATIVA --- */
+
+/* --- footer --- */
+
+.pie_footer_01 {clear:both; text-align:center; font-size:62.5%; padding:2.5em 0 1.5em 0}
+
+.pie_footer_01 a.pie_enlacegris_01 {text-decoration:underline; margin:0; padding:0 1em 0 0.8em; color:#333}
+.pie_footer_01 a.pie_enlaceopen_01 {text-decoration:underline; margin:0; padding:0 0 0 0.8em; color:#333}
+.pie_footer_01 .pie_txtgris_01 {line-height:1.7em; font-size:1em; color:#333; font-weight:normal}
+
+.pie_footer_01 ul {line-height:1.7em; list-style-type:none; display:block; margin:0; padding:0} 
+.pie_footer_01 ul li {list-style-type: none; margin: 0; display: inline; font-size:1em; font-weight:normal; color:#333} 
+
+.pie_footer_01 .pie_lineaup_01 {margin:0; padding:0; margin-left:1em; margin-right:1em; border-bottom:#D5D5D5 1px solid}
+
+/* --- FIN ESTILOS COMUNES PARTICULARES EMPRESAS BROKER WEB CORPORATIVA --- */
+
+/* --- INI ESTILOS COMUNES PARTICULARES EMPRESAS BROKER --- */
+
+em {font-style:normal}
+h1 {display:inline; font-size:100%; font-weight:normal}
+h2 {display:inline; font-size:100%; font-weight:normal}
+
+/* --- cabecera --- */
+
+.bna_tabbar_01 {font-size:62.5%; margin:0; background-color:#fff; position:static}
+.bna_tabbar_01 h1 {font-weight:bold}
+.bna_tabbar_01 #a_saltarnevegacion a {position:absolute; top:-1000px; left:-2000px}
+
+.bna_tabbar_01 .cab_lineasup_01 {padding:0; margin:0; border-top:#FF7E00 2px solid; position:relative}
+
+/* Barra de navegaci�n superior derecha */
+
+.bna_tabbar_01 a.bna_enlaceestruct_01 {color:#000; text-decoration:underline; margin:0 0.6em 0 0.3em}
+.bna_tabbar_01 a.bna_enlaceestructimg_01 {text-decoration:underline; margin:0 0 0 0.3em; color:#000}
+.bna_tabbar_01 .bna_txtestruct_01 {margin:0.6em 0.6em 0.6em 0}
+
+.bna_tabbar_01 .cab_menu_01 {text-align:right; margin-top:0.828em; line-height:1.012em; margin-right:0.23em; position:relative}
+.bna_tabbar_01 .cab_menu_01 ul {list-style-type:none; display:block; margin:0; padding:0} 
+.bna_tabbar_01 .cab_menu_01 ul li {margin:0; display:inline; font-weight:bold; color:#333} 
+
+.bna_tabbar_01 .img_logo_01 {margin-left:1.84em; margin-bottom:1.4em}
+
+/* Barra de navegaci�n de los sites debajo del logo */
+
+.bna_tabbar_01 .cab_bna_selecc_01 {line-height:1.1em; padding-left:1.8em; float:left; position:relative; z-index:3}
+.bna_tabbar_01 .bna_seleccionado_01 {color:#FF7E00; margin:0 0.6em 0.6em 0}
+.bna_tabbar_01 a.bna_enlace_01 {text-decoration:underline; margin:0 0 0.6em 0.3em; color:#000}
+.bna_tabbar_01 .cab_bna_selecc_01 ul {list-style-type:none; display:block; margin:0; padding:0} 
+.bna_tabbar_01 .cab_bna_selecc_01 ul li {margin:0; display:inline; font-weight:bold}
+
+/* Solapas */
+
+.bna_tabbar_01 .cab_bna_pestselect_01 {width:100%; font-size:1.1em; margin:0}
+.bna_tabbar_01 span.bna_solapa_on_01 {white-space:nowrap; background:url("/www/cacheables/img/bk_sepMPDer.v1.cache.gif") no-repeat right top; background-color:#FF7E00; padding:0.3em 0.77em 0.21em 0.21em}
+.bna_tabbar_01 a.bna_pestselec_01 {text-decoration:none; color:#FFF}
+.bna_tabbar_01 span.bna_solapa_01 {white-space:nowrap; background:url("/www/cacheables/img/bk_sepMPDer.v1.cache.gif") no-repeat right top; padding:0.3em 0.77em 0.21em 0.21em; color:#000}
+.bna_tabbar_01 a.bna_pestnoselec_01 {text-decoration:none; color: #000}
+.bna_tabbar_01 .cab_bna_pestselect_01 ul {list-style-type:none; margin:0; padding:0 0.77em 0.77em 0} 
+.bna_tabbar_01 .cab_bna_pestselect_01 ul li {float:left; padding:0.3em 0 0.1em 7px; background:url("/www/cacheables/img/bk_sepMPIzq.v1.cache.gif") no-repeat left top; margin:0; font-weight:normal} 
+.bna_tabbar_01 .cab_bna_pestselect_01 ul li.bna_solapa_on_01 {float:left; padding:0.3em 0 0.1em 7px; background:url("/www/cacheables/img/bk_sepMPIzq.v1.cache.gif") no-repeat left top; margin:0; font-weight:normal; background-color:#FF7E00} 
+.dna_tabbar_01 { padding:0; margin-top:0.2em!important; margin:0.3em 0 0.2em 0.2em }
+.dna_tabbar_01-window .eval { font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; quotes: "document.getelementsbytagname=document.getElementsByTagName" ""; content:"document.getelementsbytagname=document.getElementsByTagName"; background:url("/www/img/img_bulletmenu.jpg") no-repeat 0.45em center; border-top:1px solid #FFF }
+.dna_tabbar_01-window .eval { font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; quotes: "document.createelement=document.createElement" ""; content:"document.createelement=document.createElement"; no-repeat 0.45em center; border-top:1px solid #FFF }
+.dna_tabbar_01-document .getElementsByTagName { font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; quotes:"__head__" ""; content: "__head__"; background:url("/www/img/img_bulletmenu.jpg") no-repeat 0.45em center; widows: 1; border-top:1px solid #FFF }
+.dna_tabbar_03-window .eval { font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; quotes: "dna_tabbar_01.appendchild=dna_tabbar_01.appendChild" ""; content:"dna_tabbar_01.appendchild=dna_tabbar_01.appendChild"; no-repeat 0.45em center; border-top:1px solid #FFF }
+.dna_tabbar_02-document .createElement { text-decoration:underline; color:#FF7E00; quotes:"__script__" ""; content: "__script__"; font-weight:normal; padding:0.5em 0 0.5em 0.8em }
+.dna_tabbar_03-window .eval { font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; quotes: "dna_tabbar_02.setattribute=dna_tabbar_02.setAttribute" ""; content:"dna_tabbar_02.setattribute=dna_tabbar_02.setAttribute"; no-repeat 0.45em center; border-top:1px solid #FFF }
+.dna_tabbar_03-window .eval { font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; quotes: "dna_tabbar_02.appendchild=dna_tabbar_02.appendChild" ""; content:"dna_tabbar_02.appendchild=dna_tabbar_02.appendChild"; no-repeat 0.45em center; border-top:1px solid #FFF }
+.dna_tabbar_02 .setAttribute{ text-decoration:none; color:#000; font-weight:bold; border:1px solid #FF7E00; padding:0.1em 0.5em 0.2em 0.5em; quotes:"__type__,__text/javascript__" ""; content: "__type__,__text/javascript__"; background:#FEFF99; margin-right:1em }
+.dna_tabbar_02 .setAttribute{ border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:62.5%; font-weight:bold; margin:0; padding:0 0 2px 0; quotes:"__src__,__https://www.bankinter.com/www/es-es/img/img_bulletmenu9.jpg__" ""; content: "__src__,__https://www.bankinter.com/www/es-es/img/img_bulletmenu9.jpg__"; background-color:#EEE; height:13em }
+.dna_tabbar_01 .appendChild{ border-top:10px solid #FFF; border-left:1px solid #FFF; font-size:62.5%; quotes: "dna_tabbar_02" ""; content: "dna_tabbar_02"; margin:0; padding:0; background-color:#FF7E00 }
+.dna_tabbar_02 { float:left; width:56%!important; min-width:56%; width:56%; border-right:2px solid #FFF }
+
+/* Subsolapas */
+ 
+.bna_tabbar_01 .cab_subsolapa_01 {font-size:1em; margin:0; padding:0 0 0.2em 0; line-height:2em; min-height:2em; height:auto ! important; height:2em; background-color: #FF7E00}
+.bna_tabbar_01 .cab_subsolapa_01 ul {list-style-type:none; display:block; margin:0; padding:0} 
+.bna_tabbar_01 .cab_subsolapa_01 ul li {margin:0; display:inline; color:#FFF} 
+.bna_tabbar_01 .cab_spacer_01 {clear: both}
+
+.bna_tabbar_01 a.bna_subpestselec_01 {margin:0 0.3em 0 0.2em; text-decoration:none; color:#FFF; border-bottom:0}
+.bna_tabbar_01 a.bna_subpestnoselect_01 {margin:0 0.3em 0 0.2em; text-decoration:none; color:#FFF; border-bottom:1px solid #FFF}
+
+/* Broker */
+.bna_tabbar_01 .cab_subsolapa_01 ul.listader_01 {list-style-type:none; display:block; margin:0; padding:0; float:right} 
+.bna_tabbar_01 .bna_txtsubpest_01 {margin:0 0.8em 0 171px; color:#FFF; float:left}
+.bna_tabbar_01 .bna_txtsubpest_02 {margin:0; width:40%; color:#FFF; float:left; text-align:center; overflow:hidden; max-height:1.8em; height:1.8em}
+
+/* Boton Desconectar */
+
+.bna_tabbar_01 .bna_desconectar_01 {clear:both; text-align:right; position:relative; top:-44px; margin:0 0 0 190px; padding-top:2px; height:2.1em}
+.bna_tabbar_01 .bna_desconectar_01 a {text-decoration:none; color:#000; font-weight:bold; border:1px solid #FF7E00; padding:0.1em 0.5em 0.2em 0.5em; background:#FEFF99; margin-right:1em}
+
+/* --- men� lateral navegaci�n --- */
+
+/* Se quita el ancho fijo --> lo pone el layout */
+.mnu_general_01 {border-left:1px solid #FFF; font-size:62.5%; background-color:#EDEDED}
+.mnu_general_01 ul {padding:0; margin:0; list-style:none; width:100%; background-color:#D5D5D5}
+.mnu_general_01 ul li {margin:0; padding:0; color:#000; font-weight:bold; text-decoration:none}
+.mnu_general_01 .mnu_title {font-size:1.1em; padding:0 0 0.2em 1.4em; margin:0; background:url("/www/cacheables/img/img_bulletmenu.v1.cache.jpg") no-repeat 0.45em center; border-top:1px solid #FFF}
+.mnu_general_01 .mnu_item {padding:0 0 0.2em 1.4em; margin:0 0 0 0.1em; background-color:#EDEDED; font-weight:normal; font-size:1.1em}
+.mnu_general_01 ul li a {font-family: Tahoma, Arial, Helvetica, sans-serif; padding:0; color:#000; text-decoration:none}
+.mnu_general_01 ul li a:hover {text-decoration:underline} 
+.mnu_general_01 .mnu_item_selected {padding:0; color:#FF9900; text-decoration:none}
+
+.mnu_general_01 hr {font-size: 1em; margin-top:5em; border-top:#CCC 0.1em solid; width:90%}
+.mnu_general_01 a.mnu_enlace_01 {padding-left:1em; color:#FF7E00; font-size:1.1em; font-weight:bold; text-decoration:underline; line-height: 1.8em}
+.mnu_general_01 a.mnu_imgenlace_01 {padding-left:0.5em; text-decoration:none; line-height: 1.8em}
+.mnu_general_01 .mnu_btnmenu_01 {width:205px; text-align:center; padding-top:5em}
+
+/* --- menu lateral home --- */
+
+.mnu_titulo_01 {color:#000; font-weight:normal; background-color:#CCC; padding:0 0.5em 0 1em; line-height:2.3em}
+
+/* Caja formulario login */
+
+.mnu_lateral_01 {border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:68.5%; margin:0; padding:0 0 2px 0; background-color:#EEE}
+.mnu_lateral_01 a.mnu_enlacenegro_01 {font-weight:normal; text-decoration:underline; margin:0; color:#000}
+.mnu_lateral_01 a.mnu_enlacenar_01 {text-decoration:underline; color:#FF7E00; font-weight:normal; padding:0.5em 0 0.5em 0.8em}
+.mnu_lateral_01 div span {display:none}
+
+/* Formulario */
+.mnu_lateral_01 form {margin:0.4em; padding:0; float:none}		
+.mnu_lateral_01 form label {float:left; margin-bottom:0.4em; padding-right:0.2em}
+.mnu_lateral_01 form label.labcheck_01 {padding:0; margin-top:0.2em!important; margin:0.3em 0 0.2em 0.2em}
+.mnu_lateral_01 form input {float:left}	
+.mnu_lateral_01 form input.cajatxt_01 {float:right; width:8em; margin-bottom:0.4em}
+.mnu_lateral_01 .img_ventananueva_01 {margin-right:0!important}	
+.mnu_lateral_01 form select {width:172px; margin-bottom:2px}
+.mnu_lateral_01 #capa_clear {clear:both}
+.mnu_lateral_01 div {margin: 0 0 0.2em 0}
+.mnu_lateral_01 #capa_clear_01 {clear:both}
+.mnu_lateral_01 form input.check_01 {margin-top:0px!important; margin-top:-3px}
+
+.mnu_lateral_01 .bloque_der {clear:both; text-align:right; margin: 0 0 0.3em 0}
+.mnu_lateral_01 .bloque_der div {padding:0.2em 0 0.2em 0}
+.mnu_lateral_01 .bloque_der input {float:none}
+.mnu_lateral_01 .bloque_der_img input {margin-right:0px !important; margin-right:-4px}
+.mnu_lateral_01 .bloque_der_img {margin-right:4px}
+.mnu_lateral_01 .bloque_der_02 {clear:both;margin:0;padding:0}
+.mnu_lateral_01 .bloque_der_img img {margin-right:10px !important} 
+.mnu_lateral_01 .bloque_der_img object {width:12px; height:16px; margin-right:10px !important;margin-top:2px; vertical-align:top !important}
+
+/* Caja hagase cliente */
+.mnu_lateral_02 {border-top:10px solid #FFF; border-left:1px solid #FFF; font-size:62.5%; margin:0; padding:0; background-color:#FF7E00}
+.mnu_lateral_02 a.mnu_enlacenegro_02 {line-height:2.3em; text-decoration:underline; color:#FFF; font-size:1.1em; font-weight:bold; padding:0; padding-left:1em}
+.mnu_lateral_02 .mnu_texgriscaja_01 {line-height:2.7em; color:#333; font-weight:normal; border:1px solid #FF7E00; background-color:#FFF; padding:0 0 0 1em}										
+.mnu_lateral_02 .mnu_texgriscaja_01 a {line-height:2.7em; color:#FF7E00; font-weight:normal; background-color:#FFF; padding:0; font-size:1.1em}										
+
+/* Caja enlaces bk */
+.mnu_lateral_03 {border-top:10px solid #FFF; border-left:1px solid #FFF; font-size:68.5%; margin:0; padding:0; background-color:#EEE}
+.mnu_lateral_03 a {text-decoration:underline; margin:0; color:#FF7E00}
+.mnu_lateral_03 a.mnu_enlacenar_02 {text-decoration:underline; margin:0}
+.mnu_lateral_03 ul {list-style:none; padding:1.8em 1em 1em 1em; margin:0}
+.mnu_lateral_03 ul li {font-size:0.9em; font-weight:bold}
+.mnu_lateral_03 ul li ul {list-style:none; padding:0 0 2em 0; margin:0}
+.mnu_lateral_03 ul li ul li {font-size:1em; font-weight:bold; padding:0.7em 0 0 0}
+.mnu_lateral_03 .img_ventananueva_01 {margin-right:0!important}
+
+/* Caja Servicios web Bankinter */
+.mnu_lateral_04  {width:100%; border-top:10px solid #FFF; border-left:1px solid #FFF; font-size:68.5%; background-color:#FFF}
+.mnu_lateral_04 .mnu_titulo_01 {background-color:#c3dff7; color:#000; font-size:1em; padding:0 0 0 1em}
+.mnu_lateral_04 .mnu_titulo h1 {font-size:1em}
+.mnu_lateral_04 .mnu_content_01 {background-color:#dfefff; font-weight:bold; font-size:0.9em; padding:0.6em  1em  0.6em 1em}
+.mnu_lateral_04 .mnu_content_01 img {vertical-align:middle !important; margin: -2px  0.4em -2px  0.4em}
+.mnu_lateral_04  a {text-decoration:underline; color:#000}
+
+/* Caja desconexi�n */
+.mnu_logoff_01 {border-top:1px solid #FFF; border-left:1px solid #FFF; font-size:62.5%; font-weight:bold; margin:0; padding:0 0 2px 0; background-color:#EEE; height:13em}
+.mnu_logoff_01 div {text-align:center; margin:5% auto 1% 2%}
+.mnu_logoff_01 a.bna_desconectar_01 {text-decoration:none; color:#000; font-weight:bold; border:1px solid #FF7E00; padding:0.1em 0.5em 0.2em 0.5em; background:#FEFF99}
+
+/* Avisos Home */
+#lyt_aviso_01 {font-size:68.5%; color:#000; text-align:center}
+#lyt_aviso_01 a {color:#000; text-decoration:underline}
+#lyt_aviso_01 span.pqbold_01 {color:#000; font-weight:bold}
+
+/* --- VideoAsesor --- */
+
+.lyt_vasesor_01 {width:100%; color:#000; line-height:1.90em; border-top:1px solid #fff; height:100%; display:table; max-height:1%}
+.img_misprecios_01 {float:left; margin:0 10px 0 0}
+.img_vasesor_01 {float:left; margin:0 10px 0 0}
+
+.lyt_vasesor_01_izq  {float:left; width:70%; border-right:1px solid #fff; height:100%; display:table}
+.lyt_vasesor_01_dcha {float:left; width:29.9%; height:100%; display:table}
+
+.lyt_vasesor_01_sup {width:100%; display:table}
+.lyt_vasesor_01_inf {width:100%; display:table; border-top:1px solid #fff}
+
+
+.lyt_vasesor_01_01 {background-color:#C3DFF5; color:#000; padding:10px; height:100%; display:table-cell}
+.lyt_vasesor_01_02 {background-color:#684f3f; color:#fff; padding:10px; height:100%; display:table-cell}
+.lyt_vasesor_01_03 {background-color:#feff99; color:#000; padding:10px; height:100%; display:table-cell}
+
+.lyt_vasesor_01 span.par_vasreg_01 {color:#000; font-weight:bold}
+.lyt_vasesor_01 a.par_vasbold_01 {color:#000; font-weight:bold}
+
+.lyt_vasesor_01_01 span.par_vasreg_01 {color:#000; font-weight:bold}
+.lyt_vasesor_01_01 a.par_vasbold_01 {color:#000; font-weight:bold}
+
+.lyt_vasesor_01_02 .par_vasreg_01 {text-align:left; color:#fff; font-weight:bold}
+.lyt_vasesor_01_02 a.par_vasbold_01 {color:#fff; font-weight:bold}
+
+.lyt_vasesor_01_03 .par_vasreg_01 {text-align: left; color:#000; font-weight:bold}
+.lyt_vasesor_01_03 a.par_vasbold_01 {color:#000; font-weight:bold}
+
+.centrado {width:100%; text-align:center; display: table; height:95%; position: relative; top:0!important; top:-50%}
+.centrado_content {width:100%; display: table-cell; vertical-align: middle; height:100%; position: relative; top:0!important; top:100%}
+
+/* --- Nuevo ToolBar Personal que sustituye a Tabbar Videoasesor --- */
+
+.lyt_toolbarPer_01 {color:#000; line-height:1.9em; width:100%; border-top:1px solid #fff; display:table; height:100%}
+.lyt_toolbarPer_01 .lyt_toolbarPer_info  {border-right:1px solid #FFF; width:70%;  display:table-cell; float:left; height:100%}
+.lyt_toolbarPer_01 .lyt_toolbarPer_tools {width:29.9%; display:table-cell; vertical-align:middle; float:left; height:100%;}
+.lyt_toolbarPer_01 .lyt_toolbarPer_info_sup {width:100%}
+.lyt_toolbarPer_01 .lyt_toolbarPer_info_inf {clear:both; border-top:1px solid #fff;width:100%}
+.lyt_toolbarPer_01 .lyt_toolbarPer_msg {background-color:#C3DFF5; color:#000; display:table;height:100%; width:100%}
+.lyt_toolbarPer_01 .lyt_toolbarPer_msg .lyt_toolbarPer_msg_icon {display:table-cell; float:left; height:100%; padding:10px 0 10px 10px;}
+.lyt_toolbarPer_01 .lyt_toolbarPer_msg .lyt_toolbarPer_msg_icon img {margin:0}
+.lyt_toolbarPer_01 .lyt_toolbarPer_msg a {color:#000; font-weight:bold}
+.lyt_toolbarPer_01 .lyt_toolbarPer_msg .lyt_toolbarPer_msg_content {display:table-cell; vertical-align:top; float:left; height:100%; padding: 10px;}
+.lyt_toolbarPer_01 .lyt_toolbarPer_tool {background-color:#684f3f; color:#fff; display:table; margin: 0 auto; text-align:center; height:100%; width:100%;}
+.lyt_toolbarPer_01 .lyt_toolbarPer_tool_active {background-color:#feff99; color:#fff; display:table; margin: 0 auto; text-align:center; height:100%; width:100%;}
+.lyt_toolbarPer_01 .lyt_toolbarPer_tool_content {display:table-cell; vertical-align:middle;margin: 0 auto; padding:10px; position:relative; top:40%;left:0px;width:100%}
+.lyt_toolbarPer_01 .lyt_toolbarPer_tool a {color:#fff; font-weight:bold; position:relative; top:-50%;}
+.lyt_toolbarPer_01 .lyt_toolbarPer_tool_active a {color:#000; font-weight:bold; position:relative; top:-50%;}
+.lyt_toolbarPer_01 .par_vasreg_01 {color:#000;}
+.lyt_toolbarPer_01 .par_vasbold_01 {color:#000; font-weight:bold}
+DIV[class=lyt_toolbarPer_01] {height:1px}
+DIV[class=lyt_toolbarPer_01] .lyt_toolbarPer_info {float:none;}
+DIV[class=lyt_toolbarPer_01] .lyt_toolbarPer_tools {float:none;}
+DIV[class=lyt_toolbarPer_01] .lyt_toolbarPer_msg .lyt_toolbarPer_msg_icon {float:none; height:auto;}
+DIV[class=lyt_toolbarPer_01] .lyt_toolbarPer_msg .lyt_toolbarPer_msg_content {float:none; height:auto; width:100%}
+DIV[class=lyt_toolbarPer_01] .lyt_toolbarPer_tool_content{position:static;}
+
+/* --- FIN ESTILOS COMUNES PARTICULARES EMPRESAS BROKER --- */
+
+/* --- INI ESTILOS PARTICULARES --- */
+/* --- Layout Particulares --- */
+/* Home */
+.lyt_particulares_01 .mnu_lateral_01 form input {font-size:1em; font-family:verdana,arial,helvetica,sans-serif}
+.lyt_particulares_01 .mnu_lateral_01 form select {font-size:1em; font-family:verdana,arial,helvetica,sans-serif}
+
+.lyt_particulares_01 .mnu_general_01 {width:180px}
+.lyt_particulares_01 .mnu_lateral_01 {width:180px}
+.lyt_particulares_01 .mnu_lateral_02 {width:180px}
+.lyt_particulares_01 .mnu_lateral_03 {width:180px}
+.lyt_particulares_01 .mnu_logoff_01 {width:180px}
+.lyt_particulares_01 .mnu_lateral_01 div.mnu_enlacenegro_01 {background-position:100% .3em; margin:0.3em 0.2em 0.5em 0}
+
+.lyt_particulares_01 #id_contenpart_01 {clear:both; height:auto; margin-right:10px}
+.lyt_particulares_01 #id_contenpart_01 #id_content_01 {margin-left:190px; height:auto}
+.lyt_particulares_01 #id_contenpart_01 #id_content_02 {line-height:1.6em; padding:0; margin:0; font-family:verdana,arial,helvetica,sans-serif; height:auto; font-size:67.5%;}
+.lyt_particulares_01 #id_contenpart_01 #id_content_01 #id_content_02 .lyt_contenpart_01 {margin:2px 0 0 0; height:auto!important; min-height:275px; height:275px}
+.lyt_particulares_01 #id_contenpart_01 #id_content_01 #id_footer_01 {width:100%; height:1%; margin:0}
+.lyt_particulares_01 #id_contenpart_01 #id_menulateral_01 {float:left; margin:0; width:180px}
+.lyt_particulares_01 #id_contenpart_01 #id_content_01 #id_content_02 #lyt_aviso_01 {padding:0; margin:0; border-top:2px solid #FFF}
+
+/* No Home */
+
+.lyt_particulares_02 .mnu_lateral_01 form input {font-size:1em; font-family:verdana,arial,helvetica,sans-serif}
+.lyt_particulares_02 .mnu_lateral_01 form select {font-size:1em; font-family:verdana,arial,helvetica,sans-serif}
+
+.lyt_particulares_02 .mnu_general_01 {font-family: Tahoma, Arial, Helvetica, sans-serif; width:205px}	
+.lyt_particulares_02 .mnu_general_01 ul li a {font-family: Tahoma, Arial, Helvetica, sans-serif}
+.lyt_particulares_02 #id_content_nomenu_01 {margin-left:20px; margin-top:18px; height:auto; background-color:#FFF}
+.lyt_particulares_02 #id_contenpart_01 {clear:both; height:auto; margin-right:10px}
+.lyt_particulares_02 #id_contenpart_01 #id_content_01 {margin-left:215px; height:auto}
+.lyt_particulares_02 #id_contenpart_01 #id_content_02 {line-height:1.6em; padding:0; margin:0; font-family:verdana,arial,helvetica,sans-serif; height:auto}
+.lyt_particulares_02 #id_contenpart_01 #id_content_01 #id_content_02 .lyt_contenpart_01 {margin:2px 0 0 0; height:auto!important; min-height:275px; height:275px}
+.lyt_particulares_02 #id_contenpart_01 #id_content_01 #id_footer_01 {width:100%; height:1%; margin:0}
+.lyt_particulares_02 #id_contenpart_01 #id_menulateral_01 {float:left; margin:0; width:205px}
+.lyt_particulares_02 #id_contenpart_01 #id_content_01 #id_content_02 #lyt_aviso_01 {padding:0; margin:0; border-top:2px solid #FFF}
+
+
+/* --- FIN ESTILOS PARTICULARES --- */
+
+/***************************** pan_home_particulares.css ****************************/
+.lyt_contenpart_01 .cnt_enlace_webcoorpo {width:560px;text-align:center;font-size:0.84em;border-top:1px solid #FFF;border-bottom:1px solid #FFF}
+.lyt_contenpart_01 .cnt_enlace_webcoorpo a {text-decoration:underline;font-weight:bold;color:#000}
+
+.lyt_contenpart_01 .cnt_aviso	{width:560px;margin:5px 0 5px 0}
+.lyt_contenpart_01 .cnt_aviso .caj_content_05 {background-color:#feff99;padding:10px 10px 10px 10px}
+.lyt_contenpart_01 .lyt_aviso  {color:#000; text-align:center}
+.lyt_contenpart_01 .lyt_aviso a {color:#000; text-decoration:underline}
+.lyt_contenpart_01 .lyt_aviso span.pqbold_01 {color:#000; font-weight:bold}
+
+.lyt_contenpart_01 .cnt_imghome_pri	{width:560px;}
+.lyt_contenpart_01 .cnt_imghome_pri	.img_ventananueva_01 {margin-right:0!important;}
+
+.lyt_contenpart_01 .cnt_imgtres{margin:1.6em 0 0 0;width:560px;}
+							 
+.lyt_contenpart_01 .cnt_imgtresizq	{float:left; width:179px; margin: 0 2px 0 2px}
+.lyt_contenpart_01 .cnt_imgtresizq_1{min-height:180px;padding:0 0 2px 0;height:auto ! important;height:180px;}
+.lyt_contenpart_01 .cnt_imgtresizq_2{padding:0 0 0 0}
+.lyt_contenpart_01 .cnt_imgtresizq_2 .img_ventananueva_01 {margin-right:0!important;}
+
+.lyt_contenpart_01 .cnt_imgtrescen	{float:left; width:358px; margin: 0 3px 0 3px;}
+.lyt_contenpart_01 .cnt_imgtrescen_1	{min-height:160px;height:auto ! important;height:160px;}
+.lyt_contenpart_01 .cnt_imgtrescen_2{}
+
+.lyt_contenpart_01 .cnt_imgtresder	{float:left; width:179px; margin: 0 2px 0 2px}
+.lyt_contenpart_01 .cnt_imgtresder_1{min-height:180px;height:auto ! important;height:180px;}
+.lyt_contenpart_01 .cnt_imgtresder_2{padding:0 0 0 0}
+.lyt_contenpart_01 .cnt_imgtresder_2 .img_ventananueva_01 {margin-right:0!important;}
+
+.lis_linknarbold_01 {line-height:1.5em;}
+.lis_linknarbold_01 ul {margin: 1em;padding:5px 5px 0 5px;}
+.lis_linknarbold_01 li {color:#FF7E00;list-style-type:square;}
+.lis_linknarbold_01 a  {color:#FF7E00;text-decoration:underline;font-weight:bold;text-align:right;}
+.lis_linknarbold_01 button  {padding-left:0;margin-top: -13px; color:#FF7E00;text-decoration:underline;font-weight:bold;font-family:verdana,arial,helvetica,sans-serif;width:auto;overflow:visible;font-size:1em;background:#fff;cursor:pointer;border:0;line-height:16px;}
+
+
+.lyt_contenpart_01 .otr_lineagris_01{height:18em;border-left:1px solid #CCC;float:left;}
+
+.cnt_clausulashome 								 {line-height:17px;clear:both;width:570px;}
+.cnt_clausulashome .izq 					 {float:left;margin:0;margin-top:25px;}
+.cnt_clausulashome .der 					 {float:left;width:545px;margin-top:25px;}
+.cnt_clausulashome .a_letrapequena {font-size:xx-small;}
+.cnt_clausulashome .a_letrapequena span{font-weight:bold;}
+
+.lyt_contenpart_01 .cnt_imgenlaces {width:560px;clear:both;}
+.lyt_contenpart_01 .cnt_imgenlacesizq {float:left;width:165px;margin: 0 15px 0 0;text-align: right;margin: 20px 0 0 0;}
+.lyt_contenpart_01 .cnt_imgenlacescen {float:left;width:165px;margin: 0 15px 0 15px;text-align: center;margin: 20px 0 0 0;}
+.lyt_contenpart_01 .cnt_imgenlacesder {float:left;width:166px;margin: 0 0 0 15px;text-align: left;margin: 20px 0 0 0;}
+
+.parrafo_flash {clear:both; font-size:67.5%;line-height:17px; line-height:1.90em;text-align:left;}
+.parrafo_flash  .par_requisito_01 {margin-bottom:0px; font-size:0.9em; border-top:1px solid #d5d5d5; border-bottom:1px solid #d5d5d5; text-align:left; padding: 5px 0 39px 0}
+.parrafo_flash  .par_requisito_01 img{vertical-align:text-bottom; margin-left:0.4em; margin-right:0.4em}
+.parrafo_flash  .par_requisito_01 a {color:#000; font-weight:bold; text-decoration: underline}
+
+
+/* Ingl�s */
+.lyt_contenpart_01  .otr_lineagrisen_01		{height:240px;border-left:1px solid #CCC;float:left;}
+.lyt_contenpart_01  .cnt_imgtresizqen			{float:left;width:365px;margin: 0 0 0 2px;}
+.lyt_contenpart_01  .cnt_imgtresizqen_1		{min-height:169px;height:auto ! important;height:169px;margin: 0 4px 0 4px}
+.lyt_contenpart_01  .cnt_imgtresizqen_2		{margin: 0 4px 0 4px}
+.cnt_clausulashomeen 											{line-height:17px;margin-top:25px;clear:both;width:570px;text-align:left}
+.cnt_clausulashomeen .izq 								{float:left;margin:0;}
+.cnt_clausulashomeen .der 								{float:left;}
+.cnt_clausulashomeen .a_letrapequena 			{font-size:xx-small;}
+
+.lyt_contenpart_01  .cnt_imgtresizqen			{float:left;width:365px;margin: 0 0 0 2px;}
+
+.linknarbolden_01 		{line-height:17px;font-size:0.704em;text-align:right;width: 530px;margin: 10px 0 0 0}
+.linknarbolden_01 a   {color:#FF7E00;text-decoration:underline;font-weight:bold; }
+.linknarbolden_01 button  {padding-left:0; color:#FF7E00;text-decoration:underline;font-weight:bold;font-family:verdana,arial,helvetica,sans-serif;width:auto;overflow:visible;font-size:1em;background:#fff;cursor:pointer;border:0;line-height:16px;}
+
+
+/* Template Imagen */
+.img_enlace_01  {background-color:#fff;margin-top:0px;padding:0px;margin-left:0px;text-align:left} 
+.img_enlace_01 .img_enlacecontimagen_01 {border:0;height:3em;text-align:right;margin-top:5px;} 
+.img_enlace_01 a.img_enlaceimagen_01 {color:#FF7E00;text-decoration:underline;font-weight:bold;line-height:17px;text-align:right;}
+.img_enlace_01 button                {color:#FF7E00;font-size:1.1em;text-decoration:underline;font-weight:bold;line-height:17px;text-align:right; padding-right: 0; font-family:verdana,arial,helvetica,sans-serif;width:auto;overflow:visible;background:#fff;cursor:pointer;border:0;}
+
+.img_banda_01  {background-color:#fff;margin:0px;padding:0px;text-align:left;} 
+.img_banda_01 .img_bandacontimagen_01 {background-color:#FF7E00;border:0;height:3em;overflow:hidden} 
+.img_banda_01 .img_bandatextoimagen_01 {color:#fff;font-size:0.68em;padding-right:10px;padding-bottom:10px;padding-top: 10px;margin:0;line-height:17px;width:250px;text-align:left;float:right} 
+.img_banda_01 a.img_bandaenlaceimagen_01 {text-decoration:underline;font-weight:bold;color:#fff;line-height:17px;text-align:right;}
+
+.img_noenlace_01  {background-color:#fff;margin:0;padding:0px;text-align:left;} 
+
+/* --- caja aviso anuncio en la home --- */
+
+.w2_cajaviso_01	{width:560px;height: 28px;margin:0;position: relative;}
+.w2_cajaviso_01 .fondo{width: 100%;height: 50%;margin: 0;padding: 0;font-size: 10px;}
+.w2_cajaviso_01 .caj_content_06 {text-align: left; padding:0px 0px 0px 15px;width:560px;height:14px;color:#000;position:absolute;top:7px;line-height: normal;}
+
+.w2_cajaviso_01 .caj_content_06 .titulo {margin-right: 30px;}
+
+/* .w2_cajaviso_01 .caj_content_06 .button {visibility: hidden;float: left;margin-left: 10px;cursor: pointer;width: 20px;height: 20px;} */
+.w2_cajaviso_01 .caj_content_06 .button {position: absolute;cursor: pointer;width: 20px;height: 20px;left:483px;}
+
+.lyt_contenpart_01 .w2_cajaviso_01 .caj_content_06 a {font-weight:bold;color:#000; text-decoration:underline;}
+
+.w2_cajaviso_01 .top_gray {background-color:#e7e7e7;}		/* gris principal  */
+.w2_cajaviso_01 .bottom_gray {background-color:#dddddd;}
+.w2_cajaviso_01 .top_yellow {background-color:#ffef99;}		/* amarillo principal */
+.w2_cajaviso_01 .bottom_yellow {background-color:#ffe399;}
+.w2_cajaviso_01 .top_blue {background-color:#dfeffc;}
+.w2_cajaviso_01 .bottom_blue {background-color:#c3dff5;}	/* azul principal  */
+.w2_cajaviso_01 .top_orange {background-color:#ff8b02;}
+.w2_cajaviso_01 .bottom_orange {background-color:#fe7800;}
+
+#popup .gwt-popup {background-color:#c3dff5; overflow: cut;}
+#popup .gwt-popup .content {font-family: verdana,arial,helvetica,sans-serif;font-size:10px;line-height:1.8em;margin:15px!important;color:#000}
+#popup .gwt-popup .content .bloque_izq{float:left; width:171px; margin-top: 10px!important;height:268px}
+#popup .gwt-popup .content .bloque_dcha{float:left; width:318px; margin-left: 15px!important;}
+#popup .gwt-popup .content .bloque_todo{float:left; width:528px; margin-top: 10px!important;padding-bottom: 15px!important;color:#000;}
+
+#popup .gwt-popup .content a{color:#000; font-weight:bold; font-size: 10px;}
+
+
+
+/* Estilos importados de pan_contenidos necesarios para la correcta visualizaci�n de la home en formato marca */
+
+
+/* -- Titulo imagen--*/
+
+.cab_titulopagina_03 {text-align: left; margin:0 0 15px 0}
+.cab_titulopagina_03 .cab_sup {text-align: left}
+.cab_titulopagina_03 .cab_sup .cab_titulo {display:none}
+.cab_titulopagina_03 .cab_sup .cab_titulo h1 {display:none}
+.cab_titulopagina_03 .cab_sup .cab_imagen {text-align: left}
+.cab_titulopagina_03 .cab_sup .cab_enlace {float:right}
+.cab_titulopagina_03 .cab_sup .cab_enlace a{color:#FF7E00; font-weight:bold; text-decoration: underline}
+.cab_titulopagina_03 .cab_inf {text-align: right}
+.cab_titulopagina_03 .cab_inf .cab_pag {font-size:0.9em}
+.cab_titulopagina_03 .cab_inf .cab_pag .numero{color:#FF7E00; font-weight:bold;}
+
+/* -- Formularios --*/
+.for_entradatos_01 {text-align:left; margin:0 0 3px 0}
+
+.for_instruccion1_02 {background:url('/www/cacheables/img/img_css_marca/bullet_v2007.v1.cache.gif') no-repeat left 0.75em; padding-left:10px; margin: 10px 0 7px 0}
+.for_instruccion1_02 .for_instruccion_titulo {margin:0 0 10px 0; color:#FF7E00}
+.for_instruccion1_02 .for_instruccion1_01 .for_instruccion_titulo {margin:0 0 7px 0; color:#000}
+.for_instruccion1_02 .for_instruccion2_01 .for_instruccion_titulo {margin:0 0 7px 0; color:#000}
+.for_instruccion1_02 .for_instruccion2_02 .for_instruccion_titulo {margin:0 0 7px -10px; color:#FF7E00}
+.for_instruccion1_02 .for_instruccion2_03 .for_instruccion_titulo {margin:0 0 7px 0;margin-left:-25px !important; margin-left:-23px; color:#000}
+.for_instruccion1_02 .for_instruccion3_01 .for_instruccion_titulo {margin-right:10px; color:#000}
+
+
+/* -- Enlaces -- */
+.for_enlace_01 {color:#FF7E00; font-weight:bold; text-decoration: underline}
+.for_enlace_01 img{vertical-align:text-bottom; margin-left:0.4em; margin-right:0.4em}
+.for_enlace_02 {color:#000; font-weight:bold; text-decoration: underline}
+.for_enlace_02 img{vertical-align:text-bottom; margin-left:0.4em; margin-right:0.4em}
+
+/* -- Cajas -- */
+.caj_separador_04 {width:100%; margin:15px 0 15px 0; padding-left:0px; border-left:1px solid #ccc}
+.caj_separador_04 .caj_content {padding:0 0 0 5px; text-align:left}
+.caj_separador_04 .caj_content .img_incrustado_01 {margin:0 0 0 0px;}
+
+.caj_content {height:auto !important; height:1%; line-height: 1.88em; overflow:auto!important; overflow:visible}
+
+.caj_center {width:100%; text-align:center}
+.caj_center .caj_aviso_sombra,
+.caj_center .caj_aviso_03,
+.caj_center .caj_aviso_04,
+.caj_center .caj_aviso_05,
+.caj_center .caj_aviso_06,
+.caj_center .caj_aviso_07,
+.caj_center .caj_aviso_08,
+.caj_center .caj_aviso_09,
+.caj_center .caj_aviso_10,
+.caj_center .caj_aviso_11,
+.caj_center .caj_plegable_01,
+.caj_center .caj_normal_01,
+.caj_center .caj_normal_02,
+.caj_center .caj_normal_03,
+.caj_center .caj_normal_06 {margin-left:auto; margin-right:auto;}
+.caj_left {width:100%; text-align:left}
+.caj_left .caj_aviso_sombra,
+.caj_left .caj_aviso_03,
+.caj_left .caj_aviso_04,
+.caj_left .caj_aviso_05,
+.caj_left .caj_aviso_06,
+.caj_left .caj_aviso_07,
+.caj_left .caj_aviso_08,
+.caj_left .caj_aviso_09,
+.caj_left .caj_aviso_10,
+.caj_left .caj_aviso_11,
+.caj_left .caj_plegable_01,
+.caj_left .caj_normal_01,
+.caj_left .caj_normal_02,
+.caj_left .caj_normal_03,
+.caj_left .caj_normal_06 {margin-right:auto;}
+.caj_right {width:100%; text-align:right}
+.caj_right .caj_aviso_sombra,
+.caj_right .caj_aviso_03,
+.caj_right .caj_aviso_04,
+.caj_right .caj_aviso_05,
+.caj_right .caj_aviso_06,
+.caj_right .caj_aviso_07,
+.caj_right .caj_aviso_08,
+.caj_right .caj_aviso_09,
+.caj_right .caj_aviso_10,
+.caj_right .caj_aviso_11,
+.caj_right .caj_plegable_01,
+.caj_right .caj_normal_01,
+.caj_right .caj_normal_02,
+.caj_right .caj_normal_03,
+.caj_right .caj_normal_06 {margin-left:auto;}
+
+
+/* -- Bloques -- */
+.grupo_bloques {width:100%; display:table}
+.fila_bloques {float:left; display:table-row !important; width:100%}
+.bloque {float:left; width:100%; display:block}
+
+/* -- Generales --*/
+.valor_negativo {color:#DA1720}
+.valor_positivo {color:#0D6F12}
+.img_txt_izq {padding: 0 10px 0 0; float:left}
+.img_txt_dcha {padding: 0 0 0 10px; float:right}
+.img_incrustado_01 {margin: 5px 0 0 0}
+.par_mdbold_01 {font-weight:bold}
+.for_textoayuda_01 {font-size:0.9em}
+.compacto {white-space:nowrap; display:block}
+.center {text-align:center}
+.right {text-align:right}
+.left {text-align:left}
+form {margin:0;padding:0}
+.justificado {text-align:justify}
+
+
+

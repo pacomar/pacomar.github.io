@@ -1,0 +1,259 @@
+@charset "utf-8";
+/***** GENERAL CONTENT *****/
+img {padding: 0;}
+img.floatright {margin-left: 30px;}
+a img {padding: 0;}
+span.important {color: #FF0099;}
+hr {border: 5px solid #cfcfcf; border-width: 2px 5px 3px; margin: 10px 0!important; clear: both;}
+/* General advanced CSS */
+.center > * {text-align: center;}
+.center > p {text-align: left;}
+img[src*='newwin.gif'],
+img[src*='linkext'] {display: block; margin: 0; padding: 0; position: absolute; width: 100em; overflow: auto; left: -1000em;}
+/***** PAGE LAYOUT *****/
+
+.w25pc,
+.w75pc {float: left;}
+/* Basic CSS 
+.w5pc {width: 5%}
+.w10pc {width: 10%}
+.w20pc {width: 20%}
+
+.w30pc {width: 30%}
+.w33pc {width: 33.33%}
+.w40pc {width: 40%}
+
+.w60pc {width: 60%}
+.w66pc {width: 66.66%}
+.w70pc {width: 70%}
+
+.w80pc {width: 80%}
+.w90pc {width: 90%}
+.w100pc {width: 100%}*/
+div.panel.w25pc img {margin-bottom: 15px;}
+div.w50pc img.floatleft {float: left; margin-right: 30px; margin-left: 20px;}
+div.w50pc div.leftline img.floatleft {margin-left: 20px!important;}
+div.w25pc div.leftline {min-height: 250px;}
+div.w50pc div.big img.floatleft {float: left; margin-right: 20px; margin-left: 0;}
+div.leftline {border-left: 5px solid #cfcfcf; padding-left: 27px; overflow: hidden;}
+div.w50pc div.leftline {margin-left: 4px;}
+div.right hr {width: 80%;}
+div.right a.button {position: relative; left: -20px; top: 4px;}
+a.button {background: #000; color: #fff; border-radius: 4px; padding: 2px 25px; text-transform: uppercase; float: right; font: bold 2.1em arial; text-align: center; border: none;}
+/* Advanced CSS */
+div.w50pc + div.w25pc + div.w25pc > img {margin-top: 80px;}
+div.w75pc + div.w25pc > img {margin-top: 135px;}
+div.panel.w25pc > .center .big {min-height: 44px;}
+div.panel > hr + div.floatright {border-left: 10px solid #fff; float: right; position: relative; top: -28px;}
+div.leftline > img + b + p.w50pc {margin: 0 92px 0 0px!important;}
+div.w50pc + div.w50pc > img {float: left;}
+hr + .floatright > a.button {margin-right: 0;}
+div.w50pc > div.leftline > img + p {margin: 55px 0 53px 78px;}
+div.w50pc > div.leftline.center > img + p.center {margin: 0;}
+div.w50pc > div.leftline > img + p a {color: #dd37aa; font-weight: normal;}
+div.row > div.panel > strong.biggest > img {margin-top: -16px; margin-right: 10px;}
+div.row > hr:first-child {margin: 20px 10px 46px 10px!important;}
+div.w50pc > div.floatleft > strong.bigger + hr {width: 90%; text-align: left;}
+div.w50pc > div.floatleft > strong.bigger + hr + p {width: 240px; margin-right: 10px;}
+div.w25pc div.leftline img,
+div.w25pc div.leftline img + strong.big,
+div.w25pc div.leftline img +strong.big + p {margin-left: 20px;}
+/***** ARTICLE CONTENT *****/
+
+/* General basic CSS */
+article {display: block;}
+div.cell {display: table-cell; vertical-align: top;}
+div.cell ul,
+div.cell p {font-size: 1.8em;}
+article section {margin: 0!important; width: 1000px!important;}
+article#article {width: 1000px; margin: 0 auto; overflow: hidden; display: table-cell;}
+div.row {overflow: hidden; margin: 0; padding: 0; clear: both;}
+body.popup h1 {margin-top: 0;}
+.popup .print {top: -40px;}
+/* Advanced CSS */
+body.popup article > h1 {margin-left: 10px;}
+div.row:first-child div.panel {margin-top: 0;}
+article > div.panel {padding: 0; margin-bottom: 30px;}
+* > .panel,
+article > * .panel.w50pc {padding: 10px;}
+article div.right + div.w25pc p {margin-left: 0;}
+/* Text */
+article h1 {font-size: 4.2em; margin: 35px 0 15px 20px;}
+article h2 {font: bold 2.1em arial; margin: 0 0 20px 0; color: #000; border: none;}
+.biggest {font-family: 'Bankinter', arial; font-size: 4.2em; font-weight: bold; margin: 26px 0 26px 0; line-height: 1.2em;}
+.bigger {font: bold 2.1em arial; margin: 0 0 10px 0; display: block;}
+.big {font: bold 1.8em arial; display: block;}
+aside section .big {font-family: 'Bankinter', arial;}
+.cell .bigger .big p {font-size: 1.05em;}
+.info {font: normal 2.1em arial; color: #6f6f6f;}
+div.big .big,
+div.big p {font: normal 1.1em arial;}
+div.big .big span {color: #6f6f6f;}
+div.big .bigger {font: bold 1.7em arial; color: #000; margin: 0;}
+div.big p {font: normal 0.9em arial;}
+div.big .cell p {font: 0.778em/1.4em arial;}
+p,
+article section ul {font: normal 1.4em arial; color: #6f6f6f; text-align: left; line-height: 1.4em;}
+div.info p {font-size: 1em; float: left; margin-left: 30px; width: 86%;}
+div.w25pc p {text-align: left; float: left;}
+section h1 {margin: 20px 0 16px 0!important;}
+/* Advanced CSS */
+div.w50pc > strong.bigger {margin-bottom: 10px;}
+div.big > h2 {font: bold 1.4em arial; margin: 14px 0 25px 0; width: 72%;}
+div.w75pc > div.big > h2 {margin-top: -5px;}
+div.big > h2 + div.definition {margin-left: 118px; margin-bottom: 60px; color: #6f6f6f; line-height: 1.3em; padding-left: 15px;}
+div.panel > h2 > img {margin: 0 25px 25px 0;}
+div.row > div.panel > strong.biggest {margin: 0!important; float: left;}
+div.panel > strong.biggest {float: left;}
+div.row + div.row > div.panel > strong.biggest + p.bigger {float: left; margin-left: 46px;}
+section > div.row:first-child div[class|=panel] > strong.biggest {float: left; margin: 61px 0 46px 0!important; line-height: 1em;}
+section > div.row div.panel > img.floatleft + strong.biggest {width: 80%; margin: 20px 0 10px 0;}
+div.row > div.panel > div.floatleft > p.info {width: 675px; margin-left: 30px;}
+div.row > div.panel > h2 + p {text-align: justify;}
+div.w50pc > div.leftline > b {clear: both; font: bold 2.6em arial; display: block; margin-top: 20px;}
+div.w50pc > .center.leftline > b {font: bold 1.8em arial; margin-top: 0;}
+div.w75pc > hr + div.info p:first-child {margin-top: 30px!important;}
+div.w50pc hr {clear: none;}
+div.row > div.w50pc > img + strong.big + hr,
+div.row > div.w25pc > img + strong.big + hr {clear: none; float: left; width: 53%; margin: 0 0 10px 0; border: 5px solid #cfcfcf;}
+div.row > div.w25pc > img + strong.big + hr {width: 100%;}
+div.row > div.w50pc > img + strong.big + hr + p {width: 48%; text-align: left; margin-left: 15px; float: left;}
+div.row > div.panel > strong.biggest + p.info {margin-top: -36px; float: left;}
+div.row > div.panel > strong.big + hr + p {margin-left: 0; width: 96%;}
+div.row > div.w50pc > img + strong.big {float: left; display: inline-block; width: 48%;}
+div.row > div.w25pc > img + strong.big {display: inline-block;}
+div.row > div.w50pc + div.w50pc > img + strong.big {float: left; display: inline-block; width: 48%;}
+div.w25pc > div.center > img + b,
+div.w25pc > div.leftline > div.center > img + b {display: block; clear: both; font: bold 1.8em arial; text-align: center;}
+div.w25pc > div.center > img + b p,
+div.w25pc > div.leftline > div.center > img + b p {font-size: 1em;}
+.row .panel > img.floatleft {margin-right: 20px;}
+.cell > img,
+.cell > a img {margin-right: 20px;}
+/***** SECTION CONTENT *****/
+
+/* General lists */
+article ul {margin-left: 10px;}
+article section nav ul {font-size: 1.05em; color: #000;}
+article section nav ul li li a {font-size: .95em;}
+article ul.simple {overflow: hidden; font-size: 1em;}
+article .panel ul.simple {margin-left: -3px;}
+article ul.simple li {padding: 15px 0 0 15px;}
+article ul.simple li.w25pc:first-child {padding-left: 47px;}
+li.leftline {border-left: 5px solid #cfcfcf; padding-left: 5px; overflow: hidden;}
+article ul.simple .w25pc a img {margin-bottom: 20px;}
+article ul.simple .w25pc p {margin-right: 5px;}
+article ul.simple .w25pc .leftline {min-height: 272px;}
+dd.definition {margin-left: 104px;}
+dd {display: none;}
+dl,
+dt,
+dd {padding: 0;}
+dt {margin-bottom: 5px; margin-top: 30px; font: bold 2.6em arial; color: #6f6f6f; width: 100%; clear: right; border-top: 5px solid #cfcfcf; line-height: 3.9em;}
+dt img {float: left; margin: 30px 20px 0 0;}
+dl.definition dd {font: normal 2.1em arial; color: #6f6f6f; clear: none!important; display: block; margin-right: 90px;}
+/* Advanced Lists */
+article ul.simple li:before {color: #6f6f6f; content: ""; font-weight: bold; margin-left: 0;}
+article ul li:before {margin-left: -10px; color: #6f6f6f;}
+body > div.body > div.content > article ol,
+article > footer ol {margin-left: 0;}
+body > div.body > div.content > article ol p {text-align: justify;}
+body > div.body > div.content > article ol li:before {font-weight: normal; color: #6f6f6f; margin-left: 0;}
+body > div.body > div.content > article ol li:before {font-size: 1.4em; padding-right: 5px;}
+dt a > img {display: block; float: right!important; margin-right: 15px; margin-top: 32px;}
+dt span {line-height: 1.3em; display: block; margin-top: 35px; float: left; width: 90%;}
+dl.definition dd {font: normal 2.1em arial; color: #6f6f6f; clear: none!important; display: block; margin-right: 90px;}
+dt a > img {display: block; float: right!important; margin-right: 15px; margin-top: 32px;}
+/* Widgets */
+/* Slider */
+article .slider ul li:before,
+article .slider_bar ul li:before {margin-left: 0;}
+div.panel.w25pc .slider_circles img {margin-bottom: 0;}
+div.slider_bar {background-color: transparent;}
+div.w25pc ul.fix_slider_circles {display: none;}
+div.w25pc span.slider_text {text-align: left; display: block; line-height: 1.3em; font-size: 1.2em; text-shadow: none; color: #000;}
+div.w25pc .fix_slider_text b,
+div.w25pc .fix_slider_text strong {font-size: 1.5em; font-weight: bold; line-height: 1.4em; display: block;}
+div.w25pc ul.slider img {width: auto;}
+div.w25pc a.slider_control_prev,
+div.w25pc a.slider_control_next,
+div.w25pc a.slider_control_play,
+div.w25pc a.slider_control_pause {background-color: rgba(255, 255, 255, 0); top: 178px !important;}
+div.w25pc a.fix_slider_control_prev {left: 12px;}
+div.w25pc a.fix_slider_control_next {right: 30px;}
+div.w25pc a.slider_control_play {left: 90px !important;}
+div.w25pc div.fix_slider_bar {top: 265px; padding-left: 20px; width: 190px;}
+div.w25pc span.fix_slider_text {margin: 0;} 
+div.panel.w25pc .slider img {margin-bottom: 0;}
+
+/* Accordion */
+.accordion {border-bottom: 5px solid #cfcfcf; margin-bottom: 73px!important;}
+.accordion dt,
+.accordion dd {border: none;}
+.accordion dd {margin-bottom: 20px; padding: 0 0 0 104px;}
+.accordion dt {border-top: 5px solid #cfcfcf; padding: 0; margin: 0; min-height: 102px;}
+.accordion dt img {margin: 10px 0 0; vertical-align: middle;}
+dt span,
+dt.accordion-open span {line-height: 1.3em; display: block; margin-top: 35px; float: left; width: 90%}
+dt.accordion-open span {color: #000;}
+dl.accordion dd p {line-height: 1.7em; text-align: justify; margin-right: 55px; float: none; font-size: .7em; display: block;}
+dl.accordion dd p:first-child {margin-top: 0; font-size: .7em;}
+dl.accordion > dt > img + span {float: none; margin-left: 20px;}
+dl.accordion > dt > img + span,
+dl.accordion > dt.accordion-open > img + span {line-height: 1.3em; display: block; margin-top: 34px; float: left; width: 77%!important;}
+dl.accordion > dt > img + span + p,
+dl.accordion > dt.accordion-open > img + span + p {margin: 0 40px;}
+dl.accordion > dt.accordion-open + dd {text-align: justify; margin-right: 20px; float: none;}
+dl.accordion > dt.accordion-open + dd.preguntas {text-align: justify; margin-right: 90px; float: left; margin-left: 0;}
+dl.accordion > dt > img + span + a > img,
+dl.accordion > dt.accordion-open > img + span + a > img {margin-top: 27px;}
+/***** DELETE? *****/
+/* General Default Form */
+form label {font-weight: normal}
+form ul {margin: 0 0 5px 0}
+form ul.block {margin-left: 0px!important}
+.w6em,
+input[maxlength='6'],
+input[maxlength].w6em {width: 6em;}
+.w7em,
+input[maxlength='7'],
+input[maxlength].w7em {width: 7em;}
+div.lightgrey form {clear: both; border: 6px solid #d9d9d9; padding: 26px 5px 11px 16px; margin-top: 24px;}
+div.lightgrey form input[type='text'],
+div.w50pc form ul.block li input[type='text'],
+div.w50pc form ul.block li input[type='password'],
+form > ul.horizontal > li.w50pc ul li input[type='text'],
+form > ul.horizontal > li.w50pc ul li input[type='email'] {border: 1px solid #d1d1d1; height: 28px; width: 66px; padding-bottom: 1px; border-radius: 4px; font: bold 2.4em arial; color: #6f6f6f; text-align: center; float: left; margin-bottom: 9px; background: #ffffff; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f0f0f0)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* IE10+ */ background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0', GradientType=0 ); /* IE6-9 */
+}
+form legend:after,
+form label:after,
+dt:after {content: '';}
+form legend:before,
+form label:before,
+dt:before,
+aside div.important .right + ul li:before {content: "";}
+div.lightgrey form label {font: normal 1.6em arial; color: #6f6f6f; margin-top: 8px; float: left;}
+div.lightgrey form input[type="submit"],
+form ul.horizontal + div.right input[type="submit"],
+div.w50pc > form > ul + input[type="submit"] {color: #fff; background: #000; border-radius: 4px; font: bold 1.4em arial; text-transform: uppercase; margin-right: 3px!important; padding: 3px 1px;}
+form ul.horizontal + div.right input[type="submit"] {float: right; margin-right: 38px!important; margin-bottom: 40px; padding: 0 4px;}
+div.w50pc > strong.bigger + div.lightgrey > form input[type="submit"] {margin-right: 37px!important;}
+/** Forms **/
+div.w50pc form ul.block li label {width: 100%; display: block; margin: 0 0 7px 0; color: #6f6f6f; font-size: 1.5em; font-weight: normal;}
+div.w50pc form ul.block li input[type='text'],
+div.w50pc form ul.block li input[type='password'] {width: 411px; height: 38px; margin: 0; text-align: left; padding: 0 10px; margin-bottom: 15px;}
+div.w50pc form ul li a {color: #dd37aa; font: normal 1.6em arial; margin: 39px 0; float: left;}
+div.w50pc > form > ul + input[type="submit"] {font: bold 2.1em arial; margin-left: 0; padding: 4px 13px; margin-bottom: 40px;}
+form > ul.horizontal li.w50pc > ul li {float: left; width: 100%;}
+form > ul.horizontal > li.w50pc ul li label,
+form > ul.horizontal > li.w50pc + li label {width: 100%; display: block; margin: 0 0 7px 0; font: normal 1.6em arial; color: #6f6f6f; margin-top: 8px;}
+form > ul.horizontal > li.w50pc + li label {margin-left: 47px;}
+form > ul.horizontal > li.w50pc ul li input[type='text'],
+form > ul.horizontal > li.w50pc ul li input[type='email'] {width: 411px; height: 38px; margin: 0; text-align: left; padding: 0 10px;}
+form > ul.horizontal > li.w50pc ul li input[type='email'],
+form > ul.horizontal > li.w50pc ul li input[type='text'] {text-transform: none;}
+form > ul.horizontal > li.w50pc + li textarea {width: 88%!important; height: 173px; border: 1px solid #d1d1d1; border-radius: 4px; margin-bottom: 25px; font: normal 1.8em/1.3em arial; color: #6f6f6f; text-transform: none; float: right; margin-right: 0; background: #ffffff; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f0f0f0)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%, #f0f0f0 100%); /* IE10+ */ background: linear-gradient(to bottom, #ffffff 0%, #f0f0f0 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0', GradientType=0 ); /* IE6-9 */
+}
+/* home 4 */
+div.w50pc > div.lightgrey form ul li {float: left; margin-right: 10px;}
+p.info_login + div.w50pc form input[type="submit"] {color: #fff; background: #000; border-radius: 4px; height: 33px; font: bold 2.1em arial; text-transform: uppercase; margin: 19px 6px 28px 0;}
