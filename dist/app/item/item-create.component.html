@@ -1,0 +1,4 @@
+<input type="text" #newname placeholder="Name" />
+<input type="text" #newpriority placeholder="Priority" />
+<br />
+<button (click)="save(newname.value, newpriority.value)">Set Name</button>
