@@ -146,6 +146,7 @@
         <div class="bloqueForm direccionEstandarizada">
             <div class="campoForm">
               <select id="tipoVia" class="form_select concat">
+                  <option value=""></option>
                   <option id="a">a</option> 
                   <option id="b">b</option> 
                   <option id="c">c</option>  
@@ -159,6 +160,7 @@
             </div>
             <div class="campoForm">
               <select class="form_select concat" id="prefijo">      
+                <option value=""></option>
                 <option id="a">aa</option> 
                 <option id="b">ba</option> 
                 <option id="c">ca</option>   
@@ -169,9 +171,10 @@
             </div>
             <div class="campoForm">
               <select class="form_select concat">            
+                <option value=""></option>
                 <option id="a">ab</option> 
-                  <option id="b">bb</option> 
-                  <option id="c">cb</option>  
+                <option id="b">bb</option> 
+                <option id="c">cb</option>  
               </select>
             </div>
             <div class="campoForm">
@@ -182,9 +185,10 @@
             </div>
             <div class="campoForm">       
               <select  type="text" class="form_select concat">           
+                <option value=""></option>
                 <option id="a">ac</option> 
-                  <option id="b">bc</option> 
-                  <option id="c">cc</option>  
+                <option id="b">bc</option> 
+                <option id="c">cc</option>  
               </select>
             </div>
             <div class="campoForm">
@@ -195,15 +199,17 @@
             </div>
             <div class="campoForm">
             <select  type="text" class="form_select concat">
+              <option value=""></option>
               <option id="a">aaa</option> 
-                  <option id="b">baa</option> 
-                  <option id="c">caa</option>  
+              <option id="b">baa</option> 
+              <option id="c">caa</option>  
             </select>
           </div>
         </div>  <!--   direccionEstandarizada -->
           <div class="bloqueForm barrioEstandarizada">
               <div class="campoForm">
                 <select  type="text" class="form_select concat2">
+                  <option value=""></option>
                   <option id="a">abb</option> 
                   <option id="b">bbb</option> 
                   <option id="c">cbb</option>  
@@ -219,6 +225,7 @@
               </div>
               <div class="campoForm">       
                 <select  type="text"  class="form_select concat3">
+                  <option value=""></option>
                   <option id="a">acc</option> 
                   <option id="b">bcc</option> 
                   <option id="c">ccc</option>    
@@ -231,6 +238,7 @@
           <div class="bloqueForm">
               <div class="campoForm">       
                 <select  type="text" class="form_select concat4">
+                  <option value=""></option>
                   <option id="a">aab</option> 
                   <option id="b">bab</option> 
                   <option id="c">cab</option>  
@@ -243,6 +251,7 @@
           <div class="bloqueForm">
               <div class="campoForm">
                 <select class="form_select concat5">
+                  <option value=""></option>
                   <option id="a">aac</option> 
                   <option id="b">bac</option> 
                   <option id="c">cac</option>    
@@ -250,6 +259,7 @@
               </div>
               <div class="campoForm">       
                 <select  type="text" class="form_select concat5">
+                  <option value=""></option>
                   <option id="a">aba</option> 
                   <option id="b">bbb</option> 
                   <option id="c">cba</option>  
@@ -258,29 +268,6 @@
           </div><!-- complementoDireccionStandarizada -->
       </div>
       <div class="col-xs-12 campoFormLargos">
-        <!-- 
-
-        <div class="">              
-            <label for="direccionEstandarizada">Dirección Estandarizada</label>
-             <dsp:input  type="text" id="direccionEstandarizada"  bean="AddressFormHandler.direccionEstandarizada"  />
-          </div>
-          <div class="">
-            <label for="barrioEstandarizada">Barrio </label>
-            <dsp:input type="text" id="barrioEstandarizada" bean="AddressFormHandler.barrioEstandarizada"/>
-          </div>
-          <div class="">
-            <label for="urbanizacionEstandarizada">Urbanización</label>
-            <dsp:input type="text" id="urbanizacionEstandarizada"  bean="AddressFormHandler.urbanizacionEstandarizada"/>
-          </div>
-          <div class="">
-            <label for="complementoDireccionStandarizada">Complemento Dirección</label>
-            <dsp:input type="text" id="complementoDireccionStandarizada"  bean="AddressFormHandler.complementoDireccionStandarizada" />
-          </div>
-          <div class="noaddress">
-            <label><input type="checkbox"/> No pude parametrizar mi dirección</label>
-            <dsp:input type="text" id="direccionDigitadaEstandarizada" bean="AddressFormHandler.direccionDigitadaEstandarizada"/>
-          </div>
-        -->
           <div class="">    
              <input  type="text" id="direccionEstandarizada"   placeholder="Dirección Estandarizada" />
           </div>
@@ -312,61 +299,19 @@
     <script type="text/javascript">
 
       $(document).ready(function(){
+        function completaCampo(clase, id){
+          var str = "";
+          $(clase).each(function(i,e){
+            str += $(this).val() + ' ';
+          });
+          $(id).val( str );
+        }
 
-        // direccionEstandarizada();
-        // barrioEstandarizada();
-        // urbanizacionEstandarizada();
-        // direccionDigitadaEstandarizada();
-        // complementoDireccionStandarizada();
-        
-       // function direccionEstandarizada(){
-          $('.concat').focusout(function(){
-            var str = "";
-            $('.concat').each(function(i,e){
-              str += $(this).val() + ' ';
-              $( "#direccionEstandarizada" ).val( str );
-            });
-            
-          });
-       // }
-        
-      //function barrioEstandarizada(){
-          $('.concat2').focusout(function(){            
-            var str2= "";
-            $('.concat2').each(function(i,e){
-              str2 += $(this).val() + ' ';
-            });
-            $( "#barrioEstandarizada" ).val( str2 );
-          });
-      //  }
-     // function urbanizacionEstandarizada{
-          $('.concat3').focusout(function(){            
-            var str3= "";
-            $('.concat3').each(function(i,e){
-              str3 += $(this).val() + ' ';
-            });
-            $( "#urbanizacionEstandarizada" ).val( str3 );
-          });
-      //}
-      // function direccionDigitadaEstandarizada{
-          $('.concat4').focusout(function(){            
-            var str4= "";
-            $('.concat4').each(function(i,e){
-              str4 += $(this).val() + ' ';
-            });
-            $( "#direccionDigitadaEstandarizada" ).val( str4 );
-          });
-      //}
-      // function complementoDireccionStandarizada{
-          $('.concat5').focusout(function(){            
-            var str5= "";
-            $('.concat5').each(function(i,e){
-              str5 += $(this).val() + ' ';
-            });
-            $( "#complementoDireccionStandarizada" ).val( str5 );
-          });
-      //}
-
+        $('.concat').focusout(function() {completaCampo(".concat", "#direccionEstandarizada")});
+        $('.concat2').focusout(function() {completaCampo(".concat2", "#barrioEstandarizada")});
+        $('.concat3').focusout(function() {completaCampo(".concat3", "#urbanizacionEstandarizada")});
+        $('.concat4').focusout(function() {completaCampo(".concat4", "#direccionDigitadaEstandarizada")});
+        $('.concat5').focusout(function() {completaCampo(".concat5", "#complementoDireccionStandarizada")});
 
         $('.noaddress input[type="checkbox"]').click(function(){
           if( $(this).is(':checked') ){
