@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>ETB - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+      .formdirecciones .modal-content h4{
+        background: 
+        color: #FFF;
+        text-align:center;
+        text-transform: uppercase;
+        font-size: 24px;  
+        padding: 30px 0;
+      }
+      .formdirecciones .modal-content .modal-body{
+        padding: 20px 35px;
+        overflow: hidden;
+      }
+      .formdirecciones .modal-header {
+          position: relative;
+              padding: 0;
+      }
+
+      .formdirecciones .modal-header .close{
+        background: #ff5c39;
+          border-radius: 50%;
+          border: none;
+          font-size: 32px;
+          font-weight: bold;
+          color: #FFF;
+          padding: 2px 10px 3px 10px;
+          position: absolute;
+          top: -15px;
+          right: -15px;
+          opacity: 1;
+      }
+      .campoForm {
+        /*width: 165px;*/
+          display: block;
+          float: left;
+          /*margin: 0 20px;*/
+      }
+
+      .bloqueForm{
+        border-bottom:1px solid #ccc;
+        padding:10px 0;
+        overflow:hidden;
+        
+      }
+
+      .campoForm select{
+        /*width: 95%;*/
+        width: 90px;
+          margin:0px auto;
+        height: 45px;
+        color: #999;
+        padding: 5px 20px 5px 10px; 
+        font-size: 16px;
+        margin: 0px 5px 0px 0px;
+          border: 2px solid #c0c0c0;
+          border-radius: 5px;
+      }
+
+      .campoForm select.form_select {
+        color: #999;
+          background-size: 12px 10px;
+      }
+
+      .campoForm select option{
+        padding: 5px 10px;  
+      }
+      .campoForm .form_select option[selected] {
+          color: #999;
+          width: 100px;
+      }
+      .campoForm  .form_select .opcion_form{
+        color: $grayFormulario;
+      }
+      .campoForm label{
+        font-size:14px;
+        text-align:center;
+      }
+      .campoForm input[type="text"],
+      .campoFormLargos div input[type="text"]{
+        font-size: 16px;  
+      }
+      .campoForm input[type="text"]{
+        /*width: 73%;*/
+        width: 305px;
+          margin: 5px auto;
+        height: 35px;
+        margin: 0 5px 10px 0px;
+      }
+      .campoForm input.smallInput{
+        width: 74px;
+      }
+      .campoFormCortos,
+      .campoFormLargos div{
+        width: 100%;
+        margin: 5px auto;
+        overflow: hidden;
+      }
+      .campoFormLargos div input[type="text"]{  
+        background:#FFF;
+        width: 100%;
+        /*width: 95%;*/
+          margin: 5px auto;
+      }
+      .campoFormLargos .noaddress input[type="checkbox"] + input{
+        display: none;
+      }
+      .campoFormButton input[type="submit"]{
+        width: auto;
+        margin:0 auto;
+        background: url('https://www.etb.co/wcstatic/images/etb_btn_register.png') no-repeat scroll 8px center #32AACF !important;
+        background-color: #0092bc;
+          background-position: 4px center;
+          background-repeat: no-repeat;
+          border: medium none;
+          border-radius: 5px;
+          color: #fff;
+          cursor: pointer;
+          float: right;
+          font-family: "DINNextLTProRegular",Helvetica,Arial,sans-serif;
+          font-size: 1.45em;
+          margin-top: 20px;
+          outline: medium none;
+          padding-top: 5px;
+          padding-left: 38px;
+          position: relative;
+      }
+      .campoFormButton input[type="submit"]:hover{
+        background-color: #1385b7;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<div class="col-xs-12 formDireccion">
+
+    <div class="col-xs-12 campoFormCortos">
+        <div class="bloqueForm direccionEstandarizada">
+            <div class="campoForm">
+              <select id="tipoVia" class="form_select concat">
+                  <option id="a">a</option> 
+                  <option id="b">b</option> 
+                  <option id="c">c</option>  
+              </dsp:select>
+            </div>
+            <div class="campoForm">
+              <input type="text" class="concat" id="numeroNombreVia" placeholder="Nº o nombre de vía"/>
+            </div>
+            <div class="campoForm">
+              <input  type="text" id="letraPrincipal" maxlength="3" placeholder="Letra vía principal" class="smallInput concat"/>
+            </div>
+            <div class="campoForm">
+              <select class="form_select concat" id="prefijo">      
+                <option id="a">aa</option> 
+                <option id="b">ba</option> 
+                <option id="c">ca</option>   
+              </select>
+            </div>
+            <div class="campoForm">       
+              <input  type="text"  maxlength="3" placeholder="Letra prefijo" class="smallInput concat"/>
+            </div>
+            <div class="campoForm">
+              <select class="form_select concat">            
+                <option id="a">ab</option> 
+                  <option id="b">bb</option> 
+                  <option id="c">cb</option>  
+              </select>
+            </div>
+            <div class="campoForm">
+              <input  type="text" placeholder="Vía generadora"class="concat"/>
+            </div>
+            <div class="campoForm">
+              <input  type="text"  maxlength="3" placeholder="Letra vía generadora" class="smallInput concat"/>
+            </div>
+            <div class="campoForm">       
+              <select  type="text" class="form_select concat">           
+                <option id="a">ac</option> 
+                  <option id="b">bc</option> 
+                  <option id="c">cc</option>  
+              </select>
+            </div>
+            <div class="campoForm">
+              <input  type="text"  maxlength="3" placeholder="Letra sufijo" class="smallInput concat"/>
+            </div>
+            <div class="campoForm">
+              <input  type="text" placeholder="Nº placa" class="smallInput concat"/>
+            </div>
+            <div class="campoForm">
+            <select  type="text" class="form_select concat">
+              <option id="a">aaa</option> 
+                  <option id="b">baa</option> 
+                  <option id="c">caa</option>  
+            </select>
+          </div>
+        </div>  <!--   direccionEstandarizada -->
+          <div class="bloqueForm barrioEstandarizada">
+              <div class="campoForm">
+                <select  type="text" class="form_select concat2">
+                  <option id="a">abb</option> 
+                  <option id="b">bbb</option> 
+                  <option id="c">cbb</option>  
+                </select>
+              </div>
+          
+              <div class="campoForm">
+                <input  type="text" placeholder="Nombre o identificación" class="concat2"/>
+              </div>
+          </div><!-- barrioEstandarizada -->
+          <div class="bloqueForm">
+              <div class="campoForm">       
+              </div>
+              <div class="campoForm">       
+                <select  type="text"  class="form_select concat3">
+                  <option id="a">acc</option> 
+                  <option id="b">bcc</option> 
+                  <option id="c">ccc</option>    
+                </select>
+              </div>
+              <div class="campoForm">       
+                <input  type="text" placeholder="Nombre o identificación" class="concat3"/>
+              </div>
+          </div><!-- urbanizacionEstandarizada-->
+          <div class="bloqueForm">
+              <div class="campoForm">       
+                <select  type="text" class="form_select concat4">
+                  <option id="a">aab</option> 
+                  <option id="b">bab</option> 
+                  <option id="c">cab</option>  
+                </select>
+              </div>
+              <div class="campoForm">
+                <input  type="text" placeholder="Nombre o identificación" class="concat4"/>
+              </div>
+          </div><!-- direccionDigitadaEstandarizada-->
+          <div class="bloqueForm">
+              <div class="campoForm">
+                <select class="form_select concat5">
+                  <option id="a">aac</option> 
+                  <option id="b">bac</option> 
+                  <option id="c">cac</option>    
+                </select>
+              </div>
+              <div class="campoForm">       
+                <select  type="text" class="form_select concat5">
+                  <option id="a">aba</option> 
+                  <option id="b">bbb</option> 
+                  <option id="c">cba</option>  
+                </select>
+              </div>
+          </div><!-- complementoDireccionStandarizada -->
+      </div>
+      <div class="col-xs-12 campoFormLargos">
+        <!-- 
+
+        <div class="">              
+            <label for="direccionEstandarizada">Dirección Estandarizada</label>
+             <dsp:input  type="text" id="direccionEstandarizada"  bean="AddressFormHandler.direccionEstandarizada"  />
+          </div>
+          <div class="">
+            <label for="barrioEstandarizada">Barrio </label>
+            <dsp:input type="text" id="barrioEstandarizada" bean="AddressFormHandler.barrioEstandarizada"/>
+          </div>
+          <div class="">
+            <label for="urbanizacionEstandarizada">Urbanización</label>
+            <dsp:input type="text" id="urbanizacionEstandarizada"  bean="AddressFormHandler.urbanizacionEstandarizada"/>
+          </div>
+          <div class="">
+            <label for="complementoDireccionStandarizada">Complemento Dirección</label>
+            <dsp:input type="text" id="complementoDireccionStandarizada"  bean="AddressFormHandler.complementoDireccionStandarizada" />
+          </div>
+          <div class="noaddress">
+            <label><input type="checkbox"/> No pude parametrizar mi dirección</label>
+            <dsp:input type="text" id="direccionDigitadaEstandarizada" bean="AddressFormHandler.direccionDigitadaEstandarizada"/>
+          </div>
+        -->
+          <div class="">    
+             <input  type="text" id="direccionEstandarizada"   placeholder="Dirección Estandarizada" />
+          </div>
+          <div class="">
+            <input type="text" id="barrioEstandarizada" placeholder="Barrio"/>
+          </div>
+          <div class="">
+            <input type="text" id="urbanizacionEstandarizada"  placeholder="Urbanización"/>
+          </div>          
+          <div class="">
+            <input type="text" id="complementoDireccionStandarizada"  placeholder="Complemento Dirección"/>
+          </div>
+
+          <div class="noaddress">
+            <input type="checkbox"/> No pude parametrizar mi dirección
+            <input type="text" id="direccionDigitadaEstandarizada" placeholder="Dirección Digitada"/>
+          </div>
+      </div>
+      <div class="campoFormButton">       
+        <input type="submit" value="Finaliza"/>
+      </div>
+
+  </div>
+
+    
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+
+        // direccionEstandarizada();
+        // barrioEstandarizada();
+        // urbanizacionEstandarizada();
+        // direccionDigitadaEstandarizada();
+        // complementoDireccionStandarizada();
+        
+       // function direccionEstandarizada(){
+          $('.concat').focusout(function(){
+            var str = "";
+            $('.concat').each(function(i,e){
+              str += $(this).val() + ' ';
+              $( "#direccionEstandarizada" ).val( str );
+            });
+            
+          });
+       // }
+        
+      //function barrioEstandarizada(){
+          $('.concat2').focusout(function(){            
+            var str2= "";
+            $('.concat2').each(function(i,e){
+              str2 += $(this).val() + ' ';
+            });
+            $( "#barrioEstandarizada" ).val( str2 );
+          });
+      //  }
+     // function urbanizacionEstandarizada{
+          $('.concat3').focusout(function(){            
+            var str3= "";
+            $('.concat3').each(function(i,e){
+              str3 += $(this).val() + ' ';
+            });
+            $( "#urbanizacionEstandarizada" ).val( str3 );
+          });
+      //}
+      // function direccionDigitadaEstandarizada{
+          $('.concat4').focusout(function(){            
+            var str4= "";
+            $('.concat4').each(function(i,e){
+              str4 += $(this).val() + ' ';
+            });
+            $( "#direccionDigitadaEstandarizada" ).val( str4 );
+          });
+      //}
+      // function complementoDireccionStandarizada{
+          $('.concat5').focusout(function(){            
+            var str5= "";
+            $('.concat5').each(function(i,e){
+              str5 += $(this).val() + ' ';
+            });
+            $( "#complementoDireccionStandarizada" ).val( str5 );
+          });
+      //}
+
+
+        $('.noaddress input[type="checkbox"]').click(function(){
+          if( $(this).is(':checked') ){
+            $('#direccionDigitadaEstandarizada').show();
+            $('.concat, .concat2, .concat3 ,.concat4, .concat5').prop("disabled", true);
+          }else{
+            $('#direccionDigitadaEstandarizada').hide();
+            $('.concat ,.concat2, .concat3, .concat4, .concat5').prop("disabled", false);
+          }
+        }) 
+
+      });
+
+    </script>
+  </body>
+</html>
