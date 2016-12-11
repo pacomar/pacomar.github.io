@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN“
+                                        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <title>Intereses</title>
+</head>
+
+<body background="image/fondo_ladrillo.jpg">
+    <h3> Newsteler</h3>
+    <form action="mailto:nfl@españa.es" method="post" enctype="text/plain" border="1">
+        <p>
+            ¿Qué es esto?
+            <br>
+            <input type="button" name="boton" value="Descubrir" onclick="alert('Es un formulario para que recibas la información más importante sobre tu equipo (o equipos favoritos) Envíalo y empieza a disfrutar.')">
+            <p>Nombre:
+                <input type="text" name="nombre" id="nombre" size="15" maxlength="50"> Apellidos:
+                <input type="text" name="apellidos" id="apellidos" size="15" maxlength="50">
+                <p>
+                    Correo:
+                    <input type="text" name="mail" id="mail" size="25" maxlength="50">
+                    <p>
+                        Sexo:
+                        <input type="radio" name="Sexo" value="m"> mujer
+                        <input type="radio" name="Sexo" value="h"> hombre
+                        <p>
+                            Edad:
+                            <input type="text" name="edad" id="edad" size="15" maxlength="3">
+                            <p>
+                                Comunidad Autónoma:
+                                <select name="comunidad" id="comunidad">
+                                    <option value="0">Escoja una de estas opciones</option>
+                                    <option value="Andalucía">Andalucía</option>
+                                    <option value="Aragón">Aragón</option>
+                                    <option value="Principado de Asturias">Principado de Asturias</option>
+                                    <option value="Islas Baleares">Islas Baleares</option>
+                                    <option value="País Vasco">País Vasco</option>
+                                    <option value="Canarias">Canarias</option>
+                                    <option value="Cantabria">Cantabria</option>
+                                    <option value="Castilla-La Mancha">Castilla-La Mancha</option>
+                                    <option value="Castilla y León">Castilla y León</option>
+                                    <option value="Cataluña">Cataluña</option>
+                                    <option value="Extremadura">Extremadura</option>
+                                    <option value="Galicia">Galicia</option>
+                                    <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                                    <option value="Región de Murcia">Región de Murcia</option>
+                                    <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+                                    <option value="La Rioja">La Rioja</option>
+                                    <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                                    <option value="Ceuta">Ceuta</option>
+                                    <option value="Melilla">Melilla</option>
+                                </select>
+                                <p>
+                                    Equipos favoritos:
+                                    <br>
+                                    <input type="checkbox" name="" value="1"> Broncos.
+                                    <input type="checkbox" name="dos" value="1"> Chiefs.
+                                    <input type="checkbox" name="dos" value="1"> Steelers.
+                                    <input type="checkbox" name="dos" value="1"> Saints.
+                                    <p>
+                                        <input type="reset" name="resetear" value="Borrar">
+                                        <input type="submit" name="envio" value="Enviar">
+    </form>
+</body>
+
+</html>
