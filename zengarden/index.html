@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>ZenGarden</title>
+<meta name="description" content="ZenGarden: un juego idle relajante de jardines y macetas. Gratis en iPhone y Android." />
+<meta property="og:title" content="ZenGarden" />
+<meta property="og:description" content="Cultiva tu jardín zen. Gratis en iPhone y Android." />
+<meta property="og:image" content="https://pacomar.github.io/zengarden/icon.png" />
+<meta name="theme-color" content="#fff8ec" />
+<link rel="icon" href="icon.png" />
+<link rel="apple-touch-icon" href="icon.png" />
+<!-- Página puente de los enlaces que comparte el juego:
+     · en iPhone/iPad manda a App Store y en Android a Google Play (salvo ?stay=1)
+     · si el enlace trae ?code=XXXX enseña el código de amigo para usarlo al empezar -->
+<style>
+  :root { --ink: #4a3428; --ink2: #8a6d5a; --cream: #fff8ec; --card: #fffdf8; --line: #ecdcc4; --green: #72bf6a; --green-d: #4f9a49; --blue: #5bb8d4; --blue-d: #2f7d98; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { min-height: 100vh; font-family: ui-rounded, 'SF Pro Rounded', 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif; color: var(--ink);
+    background: linear-gradient(#a9def0 0%, #d8f0ef 38%, #fff3d9 62%, #b9e0a2 62.2%, #8ccb78 100%); display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+  .card { width: 100%; max-width: 380px; background: var(--card); border: 3px solid var(--ink); border-radius: 32px; padding: 28px 22px 22px; text-align: center; box-shadow: 0 8px 0 rgba(74,52,40,.25); }
+  .icon { width: 112px; height: 112px; border-radius: 26px; display: block; margin: -84px auto 10px; border: 3px solid var(--ink); background: #fff; box-shadow: 0 5px 0 rgba(74,52,40,.2); }
+  h1 { font-size: 34px; margin: 4px 0 2px; letter-spacing: .5px; }
+  .tag { color: var(--ink2); font-size: 16px; margin: 0 0 18px; }
+  .code { display: none; background: #f6ecdb; border: 2px dashed #d9c3a3; border-radius: 18px; padding: 10px 12px; margin: 0 0 18px; }
+  .code.on { display: block; }
+  .code b { display: block; font-size: 30px; letter-spacing: 4px; margin-top: 2px; }
+  .code small { color: var(--ink2); font-size: 13px; }
+  .btn { display: block; text-decoration: none; font-weight: 700; font-size: 18px; color: #fff; padding: 14px 16px; border-radius: 18px; margin: 10px 0; }
+  .btn small { display: block; font-size: 12px; font-weight: 600; opacity: .85; }
+  .ios { background: var(--ink); box-shadow: 0 5px 0 #2c1e16; }
+  .android { background: var(--green); box-shadow: 0 5px 0 var(--green-d); }
+  .btn:active { transform: translateY(2px); box-shadow: none; }
+  .foot { margin-top: 16px; font-size: 12px; color: var(--ink2); }
+  .foot a { color: var(--ink2); }
+</style>
+</head>
+<body>
+<main class="card">
+  <img class="icon" src="icon.png" alt="ZenGarden" width="112" height="112" />
+  <h1>ZenGarden</h1>
+  <p class="tag" id="tag">Cultiva tu jardín zen. Relajante y gratis.</p>
+  <div class="code" id="code"><small id="codeTxt">Usa este código al empezar el juego</small><b id="codeVal"></b></div>
+  <a class="btn ios" id="ios" href="https://apps.apple.com/app/id6766254802"><span id="iosTxt">Descargar en App Store</span><small>iPhone · iPad</small></a>
+  <a class="btn android" id="android" href="https://play.google.com/store/apps/details?id=es.fmespartero.zengarden"><span id="andTxt">Descargar en Google Play</span><small>Android</small></a>
+  <p class="foot"><a href="../privacy.html" id="priv">Privacidad</a></p>
+</main>
+<script>
+(function () {
+  var IOS = 'https://apps.apple.com/app/id6766254802';
+  var PLAY = 'https://play.google.com/store/apps/details?id=es.fmespartero.zengarden';
+  var q = new URLSearchParams(location.search);
+  var code = (q.get('code') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 10);
+  var es = /^es\b/i.test(navigator.language || '');
+  var T = es
+    ? { tag: 'Cultiva tu jardín zen. Relajante y gratis.', code: 'Usa el código {c} al empezar', label: 'Usa este código al empezar el juego', ios: 'Descargar en App Store', and: 'Descargar en Google Play', priv: 'Privacidad' }
+    : { tag: 'Grow your own zen garden. Relaxing and free.', code: 'Use the code {c} when you start', label: 'Use this code when you start the game', ios: 'Download on the App Store', and: 'Get it on Google Play', priv: 'Privacy' };
+  document.documentElement.lang = es ? 'es' : 'en';
+  document.getElementById('tag').textContent = T.tag;
+  document.getElementById('iosTxt').textContent = T.ios;
+  document.getElementById('andTxt').textContent = T.and;
+  document.getElementById('priv').textContent = T.priv;
+  if (code.length >= 4) {
+    document.getElementById('code').className = 'code on';
+    document.getElementById('codeTxt').textContent = T.label;
+    document.getElementById('codeVal').textContent = code;
+    document.getElementById('code').setAttribute('aria-label', T.code.replace('{c}', code));
+  }
+  // Android: el código viaja también como «referrer» de Play (por si algún día se lee en la app)
+  if (code) document.getElementById('android').href = PLAY + '&referrer=' + encodeURIComponent('code=' + code);
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+  if (isIOS) document.getElementById('android').style.display = 'none';
+  if (isAndroid) document.getElementById('ios').style.display = 'none';
+  // Redirección automática. Con código se espera un poco para que se pueda leer (y copiar).
+  if (q.get('stay') !== '1' && (isIOS || isAndroid)) {
+    var to = isIOS ? IOS : document.getElementById('android').href;
+    setTimeout(function () { location.href = to; }, code ? 4000 : 600);
+  }
+})();
+</script>
+</body>
+</html>

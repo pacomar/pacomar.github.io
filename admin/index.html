@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PacoGames Admin</title>
+<meta name="robots" content="noindex">
+<!--
+  Panel de administración de PacoGames (un solo archivo, sin compilar).
+  · Entra con el email/contraseña (o enlace mágico) de un usuario que esté en public.pc_admin_users.
+  · Todas las acciones pasan por la Edge Function «pc-admin», que comprueba el rol en el servidor y
+    las apunta en pc_audit_log. Aquí NO hay ninguna clave secreta: solo la URL y la clave pública.
+-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+:root {
+  --bg: #f6efe2; --card: #fffdf8; --ink: #3f2d22; --ink2: #8a6d5a; --line: #ead9c0; --green: #5aa84f; --green-d: #3f8a3a;
+  --blue: #3a92b0; --red: #c94a4a; --gold: #d39a1d; --soft: #fbf4e8; --shadow: 0 2px 0 #e0cba9;
+  --font: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #1d1915; --card: #28221d; --ink: #f2e8dc; --ink2: #bba58f; --line: #3d342b; --soft: #312a23; --shadow: 0 2px 0 #14110e;
+} }
+:root[data-theme="dark"] { --bg: #1d1915; --card: #28221d; --ink: #f2e8dc; --ink2: #bba58f; --line: #3d342b; --soft: #312a23; --shadow: 0 2px 0 #14110e; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.4 var(--font); }
+header { position: sticky; top: 0; z-index: 5; background: var(--card); border-bottom: 1.5px solid var(--line); padding: 10px 16px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+header h1 { font-size: 18px; margin: 0; flex: 1; white-space: nowrap; }
+header select, header button { font: inherit; }
+header select { width: auto; max-width: 200px; }
+nav { display: flex; gap: 4px; overflow-x: auto; padding: 8px 16px; background: var(--card); border-bottom: 1.5px solid var(--line); scrollbar-width: none; }
+nav button { flex-shrink: 0; border: 0; background: none; color: var(--ink2); font: 600 14px var(--font); padding: 7px 12px; border-radius: 999px; cursor: pointer; }
+nav button.on { background: var(--soft); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); }
+main { max-width: 980px; margin: 0 auto; padding: 14px 16px 60px; }
+.card { background: var(--card); border: 1.5px solid var(--line); border-radius: 16px; padding: 14px; margin-bottom: 12px; box-shadow: var(--shadow); }
+.card h2 { font-size: 16px; margin: 0 0 10px; }
+.card h3 { font-size: 14px; margin: 14px 0 6px; color: var(--ink2); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+.stat { background: var(--soft); border-radius: 12px; padding: 10px 12px; }
+.stat b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12.5px; color: var(--ink2); }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.row > * { min-width: 0; }
+label { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; font-weight: 600; color: var(--ink2); }
+input, select, textarea { font: 15px var(--font); color: var(--ink); background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px; padding: 8px 10px; width: 100%; }
+textarea { font: 12.5px ui-monospace, SFMono-Regular, Menlo, monospace; min-height: 160px; resize: vertical; }
+input[type="checkbox"] { width: auto; }
+button.btn { font: 600 14px var(--font); border: 0; border-radius: 10px; padding: 8px 14px; cursor: pointer; background: var(--soft); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--line); white-space: nowrap; }
+button.btn.green { background: var(--green); color: #fff; box-shadow: none; }
+button.btn.blue { background: var(--blue); color: #fff; box-shadow: none; }
+button.btn.red { background: var(--red); color: #fff; box-shadow: none; }
+button.btn:disabled { opacity: .5; cursor: default; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+th, td { text-align: left; padding: 6px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--ink2); font-weight: 600; font-size: 12px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+.tag { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--soft); }
+.tag.red { background: #f8dede; color: #9b2c2c; } .tag.green { background: #e2f3dc; color: #2f6b2a; } .tag.gold { background: #fbefcc; color: #7a5a0a; }
+tr.list-item { display: table-row; }
+.list-item { display: flex; gap: 10px; align-items: center; padding: 8px 6px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.list-item:hover { background: var(--soft); }
+.muted { color: var(--ink2); font-size: 13px; }
+.err { color: var(--red); font-weight: 600; font-size: 13.5px; }
+.ok { color: var(--green-d); font-weight: 600; font-size: 13.5px; }
+.toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 999px; font-weight: 600; z-index: 20; max-width: calc(100% - 32px); }
+.login { max-width: 420px; margin: 40px auto; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cols4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+pre { background: var(--soft); border-radius: 10px; padding: 10px; overflow: auto; font-size: 12px; max-height: 360px; margin: 6px 0; }
+.hide { display: none !important; }
+@media (max-width: 560px) { .cols { grid-template-columns: 1fr; } .cols4 { grid-template-columns: 1fr 1fr; } header h1 { font-size: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>🌿 PacoGames · Admin</h1>
+  <select id="game" title="Juego"></select>
+  <span id="who" class="muted"></span>
+  <button class="btn hide" id="logout">Salir</button>
+</header>
+<nav id="tabs" class="hide"></nav>
+<main id="main"></main>
+<div id="toast" class="toast hide"></div>
+
+<script>
+// ── Configuración: URL y clave PÚBLICA del proyecto (se pueden escribir aquí o en el formulario) ──
+const DEFAULTS = { url: 'https://pjgxqdwbtkxbzqqydmqx.supabase.co', anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqZ3hxZHdidGt4YnpxcXlkbXF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwMzc2ODEsImV4cCI6MjEwNjYxMzY4MX0.XYx0NzhW5ZXecEd9k2oIA6tZFkPiS6CAbpim7Ty1cWE', game: 'zengarden' };
+const LS = 'pg.admin.conf';
+const conf = Object.assign({}, DEFAULTS, (() => { try { return JSON.parse(localStorage.getItem(LS) || '{}'); } catch { return {}; } })());
+let sb = null, me = null, role = null, tab = 'dash';
+
+// ── utilidades ──
+const $ = (s, el = document) => el.querySelector(s);
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v === undefined || v === null || v === false) continue;
+    if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+    else if (k === 'class') el.className = v;
+    else if (k === 'value') el.value = v;
+    else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat()) if (c !== null && c !== undefined && c !== false) el.append(c instanceof Node ? c : document.createTextNode(String(c)));
+  return el;
+}
+const fmt = (n) => { n = Number(n) || 0; if (Math.abs(n) < 1e4) return n.toLocaleString('es'); const u = ['', 'K', 'M', 'B', 'T', 'Qa', 'Qi']; let i = Math.floor(Math.log10(Math.abs(n)) / 3); if (i >= u.length) return n.toExponential(2); return (n / 10 ** (i * 3)).toFixed(2).replace(/\.?0+$/, '') + u[i]; };
+const date = (s) => s ? new Date(s).toLocaleString('es', { dateStyle: 'short', timeStyle: 'short' }) : '—';
+const i18n = (x) => !x ? '' : typeof x === 'string' ? x : (x.es || x.en || Object.values(x)[0] || '');
+function toast(t, ms = 2600) { const el = $('#toast'); el.textContent = t; el.classList.remove('hide'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.add('hide'), ms); }
+const ERR = { forbidden: 'Sin permiso (¿estás en pc_admin_users?)', invalid_config: 'Configuración no válida', invalid_def: 'Reto no válido', invalid_chests: 'Cofres no válidos', unknown_player: 'Jugador desconocido', past_day: 'Ese día ya pasó (marca «forzar»)', has_runs: 'Ese reto ya tiene partidas', rate: 'Demasiadas peticiones' };
+
+/** Llama a la Edge Function «pc-admin». Lanza Error con el código del servidor */
+async function api(action, args = {}) {
+  const { data, error } = await sb.functions.invoke('pc-admin', { body: { action, game: conf.game, ...args } });
+  if (error) {
+    let body = null;
+    try { body = await error.context.json(); } catch { /* */ }
+    const code = body?.error || error.message;
+    throw new Error((ERR[code] || code) + (body?.detail ? ` (${typeof body.detail === 'string' ? body.detail : JSON.stringify(body.detail)})` : ''));
+  }
+  return data;
+}
+async function run(btn, fn) {
+  if (btn) btn.disabled = true;
+  try { return await fn(); } catch (e) { toast('⚠ ' + e.message, 4000); } finally { if (btn) btn.disabled = false; }
+}
+
+// ── arranque / sesión ──
+function connectForm() {
+  const main = $('#main'); main.innerHTML = '';
+  const url = h('input', { placeholder: 'https://xxxx.supabase.co', value: conf.url });
+  const key = h('input', { placeholder: 'clave pública (anon / sb_publishable_…)', value: conf.anonKey });
+  const email = h('input', { type: 'email', placeholder: 'tu@email.com', autocomplete: 'username' });
+  const pass = h('input', { type: 'password', placeholder: 'contraseña', autocomplete: 'current-password' });
+  const msg = h('div', { class: 'muted' });
+  const save = () => { conf.url = url.value.trim().replace(/\/+$/, ''); conf.anonKey = key.value.trim(); localStorage.setItem(LS, JSON.stringify(conf)); init(); };
+  main.append(h('div', { class: 'card login' },
+    h('h2', {}, 'Entrar'),
+    h('label', {}, 'URL del proyecto', url), h('br'),
+    h('label', {}, 'Clave pública', key),
+    h('p', { class: 'muted' }, 'Nunca pegues aquí la service_role ni la sb_secret_.'),
+    h('label', {}, 'Email', email), h('br'), h('label', {}, 'Contraseña', pass), h('br'),
+    h('div', { class: 'row' },
+      h('button', { class: 'btn green', onclick: async (e) => { save(); await run(e.target, async () => { const { error } = await sb.auth.signInWithPassword({ email: email.value, password: pass.value }); if (error) throw error; await afterLogin(); }); } }, 'Entrar'),
+      h('button', { class: 'btn', onclick: async (e) => { save(); await run(e.target, async () => { const { error } = await sb.auth.signInWithOtp({ email: email.value, options: { emailRedirectTo: location.href.split('#')[0], shouldCreateUser: false } }); if (error) throw error; msg.textContent = 'Te hemos enviado un enlace mágico. Ábrelo en este navegador.'; }); } }, 'Enlace mágico')),
+    msg));
+}
+async function init() {
+  if (!conf.url || !conf.anonKey || !window.supabase) return connectForm();
+  sb = window.supabase.createClient(conf.url, conf.anonKey, { auth: { persistSession: true, detectSessionInUrl: true } });
+  const { data } = await sb.auth.getSession();
+  if (!data.session) return connectForm();
+  await afterLogin();
+}
+async function afterLogin() {
+  const { data } = await sb.auth.getUser();
+  me = data.user;
+  try { role = (await api('whoami')).role; } catch (e) { $('#main').innerHTML = ''; $('#main').append(h('div', { class: 'card login' }, h('p', { class: 'err' }, e.message), h('button', { class: 'btn', onclick: logout }, 'Salir'))); return; }
+  $('#who').textContent = `${me.email || me.id} · ${role}`;
+  $('#logout').classList.remove('hide');
+  $('#tabs').classList.remove('hide');
+  try {
+    const { data: games } = await sb.from('pc_games').select('id,name');
+    const sel = $('#game'); sel.innerHTML = '';
+    for (const g of games || [{ id: conf.game, name: conf.game }]) sel.append(h('option', { value: g.id }, g.name));
+    sel.value = conf.game;
+    sel.onchange = () => { conf.game = sel.value; localStorage.setItem(LS, JSON.stringify(conf)); show(tab); };
+  } catch { /* */ }
+  renderTabs(); show(tab);
+}
+async function logout() { await sb?.auth.signOut(); location.reload(); }
+$('#logout').onclick = logout;
+
+const TABS = [['dash', 'Panel'], ['players', 'Jugadores'], ['gifts', 'Regalos'], ['config', 'Configuración'], ['challenges', 'Retos'], ['reports', 'Denuncias'], ['audit', 'Auditoría']];
+const MOD_TABS = ['dash', 'players', 'reports'];
+function renderTabs() {
+  const nav = $('#tabs'); nav.innerHTML = '';
+  for (const [id, name] of TABS) if (role === 'admin' || MOD_TABS.includes(id)) nav.append(h('button', { class: tab === id ? 'on' : '', onclick: () => show(id) }, name));
+}
+function show(id) { tab = id; renderTabs(); const m = $('#main'); m.innerHTML = ''; ({ dash, players, gifts, config, challenges, reports, audit })[id](m); }
+
+// ── Panel ──
+async function dash(m) {
+  const box = h('div', { class: 'card' }, h('h2', {}, 'Resumen'), h('p', { class: 'muted' }, 'Cargando…'));
+  m.append(box);
+  await run(null, async () => {
+    const d = await api('dashboard');
+    box.innerHTML = '';
+    const stats = [['players', 'Jugadores'], ['dau', 'Activos 24 h'], ['wau', 'Activos 7 días'], ['new_today', 'Nuevos hoy'], ['named', 'Con nombre'], ['saves', 'Partidas en la nube'],
+      ['challenge_runs_today', 'Retos hoy'], ['grants_pending', 'Regalos sin recoger'], ['broadcasts_live', 'Regalos para todos activos'], ['flagged', 'Puntuaciones marcadas'], ['reports_open', 'Denuncias abiertas'], ['banned', 'Baneados']];
+    box.append(h('h2', {}, 'Resumen'), h('div', { class: 'grid' }, stats.map(([k, n]) => h('div', { class: 'stat' }, h('b', {}, fmt(d[k])), h('span', {}, n)))));
+    const top = d.top || {};
+    for (const [b, rows] of Object.entries(top)) {
+      box.append(h('h3', {}, 'Top ' + b), ...rows.map((r, i) => h('div', { class: 'list-item', onclick: () => openPlayer(r.user_id) }, h('span', {}, `${i + 1}. ${r.name || '(sin nombre)'}`), h('b', { style: 'margin-left:auto' }, fmt(r.value)))));
+    }
+  });
+}
+
+// ── Jugadores ──
+async function players(m) {
+  const q = h('input', { placeholder: 'Nombre, código de amigo o id' });
+  const res = h('div');
+  const search = async (btn) => run(btn, async () => {
+    const list = await api('search', { q: q.value });
+    res.innerHTML = '';
+    if (!list.length) res.append(h('p', { class: 'muted' }, 'Sin resultados.'));
+    for (const p of list) res.append(h('div', { class: 'list-item', onclick: () => openPlayer(p.user_id) },
+      h('b', {}, p.name || '(sin nombre)'), h('span', { class: 'tag' }, p.code), p.banned ? h('span', { class: 'tag red' }, 'baneado') : null,
+      h('span', { class: 'muted', style: 'margin-left:auto' }, 'visto ' + date(p.last_seen_at))));
+  });
+  q.addEventListener('keydown', (e) => { if (e.key === 'Enter') search(); });
+  m.append(h('div', { class: 'card' }, h('h2', {}, 'Buscar jugador'), h('div', { class: 'row' }, h('div', { style: 'flex:1' }, q), h('button', { class: 'btn green', onclick: (e) => search(e.target) }, 'Buscar')), res));
+  search();
+}
+async function openPlayer(id) {
+  tab = 'players'; renderTabs();
+  const m = $('#main'); m.innerHTML = '';
+  m.append(h('button', { class: 'btn', onclick: () => show('players') }, '← Volver'), h('br'), h('br'));
+  const box = h('div', { class: 'card' }, h('p', { class: 'muted' }, 'Cargando…'));
+  m.append(box);
+  await run(null, async () => {
+    const d = await api('player', { user_id: id });
+    const p = d.profile || {};
+    box.innerHTML = '';
+    box.append(h('h2', {}, p.display_name || '(sin nombre)', ' ', p.banned ? h('span', { class: 'tag red' }, 'baneado') : h('span', { class: 'tag green' }, 'activo')),
+      h('div', { class: 'grid' },
+        h('div', { class: 'stat' }, h('b', {}, p.referral_code || '—'), h('span', {}, 'Código de amigo')),
+        h('div', { class: 'stat' }, h('b', { style: 'font-size:14px' }, date(p.created_at)), h('span', {}, 'Alta')),
+        h('div', { class: 'stat' }, h('b', { style: 'font-size:14px' }, date(p.last_seen_at)), h('span', {}, 'Última vez')),
+        h('div', { class: 'stat' }, h('b', { style: 'font-size:14px' }, d.auth?.is_anonymous ? 'Anónima' : 'Enlazada'), h('span', {}, 'Cuenta'))),
+      h('p', { class: 'muted' }, 'id: ', h('code', {}, id), p.ban_reason ? ` · motivo: ${p.ban_reason}` : ''));
+    // partida en la nube
+    if (d.save) {
+      const s = d.save.summary || {};
+      const pre = h('pre', { class: 'hide' });
+      box.append(h('h3', {}, 'Partida en la nube'), h('p', {}, `v${d.save.version} · ${date(d.save.updated_at)} · ${(d.save.size / 1024).toFixed(1)} KB · ${d.save.device || ''}`),
+        h('p', { class: 'muted' }, `O₂ total ${fmt(s.o2)} · ${s.gardens ?? '?'} jardines (${s.done ?? '?'} completados) · semillas ${fmt(s.seeds)} · ${Math.round((s.playTime || 0) / 3600)} h de juego`),
+        h('button', { class: 'btn', onclick: (e) => run(e.target, async () => { const r = await api('save_view', { user_id: id }); pre.textContent = JSON.stringify(r?.data, null, 1); pre.classList.toggle('hide'); }) }, 'Ver partida (JSON)'), pre);
+    } else box.append(h('h3', {}, 'Partida en la nube'), h('p', { class: 'muted' }, 'No tiene.'));
+    // marcadores
+    box.append(h('h3', {}, 'Puntuaciones'), h('div', { class: 'scroll' }, h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Marcador'), h('th', { class: 'num' }, 'Valor'), h('th', {}, 'Estado'), h('th', {}))),
+      h('tbody', {}, (d.scores || []).map((s) => h('tr', {}, h('td', {}, s.board), h('td', { class: 'num' }, fmt(s.value)), h('td', {}, s.flagged ? h('span', { class: 'tag red' }, 'marcada') : h('span', { class: 'tag green' }, 'visible')),
+        h('td', { class: 'row' },
+          h('button', { class: 'btn', onclick: (e) => run(e.target, async () => { await api('score_flag', { user_id: id, board: s.board, flagged: !s.flagged }); toast('Hecho'); openPlayer(id); }) }, s.flagged ? 'Mostrar' : 'Ocultar'),
+          h('button', { class: 'btn red', onclick: (e) => confirm(`¿Borrar ${s.board}?`) && run(e.target, async () => { await api('score_reset', { user_id: id, board: s.board }); toast('Borrada'); openPlayer(id); }) }, 'Borrar'))))))));
+    // acciones
+    const gems = h('input', { type: 'number', min: 0, max: 100000, value: 0 });
+    const ch = Object.fromEntries(['wood', 'silver', 'gold', 'magic'].map((k) => [k, h('input', { type: 'number', min: 0, max: 50, value: 0 })]));
+    const kind = h('select', {}, h('option', { value: 'admin' }, 'Regalo'), h('option', { value: 'compensation' }, 'Compensación'));
+    const tEs = h('input', { placeholder: 'Título (es)' }), tEn = h('input', { placeholder: 'Title (en)' });
+    const note = h('input', { placeholder: 'Nota interna (motivo)' });
+    box.append(h('h3', {}, 'Dar Rocío / cofres'),
+      h('div', { class: 'cols4' }, h('label', {}, 'Rocío', gems), ...['wood', 'silver', 'gold', 'magic'].map((k) => h('label', {}, { wood: 'Madera', silver: 'Plata', gold: 'Oro', magic: 'Mágico' }[k], ch[k]))),
+      h('div', { class: 'cols', style: 'margin-top:8px' }, h('label', {}, 'Tipo', kind), h('label', {}, 'Nota', note), h('label', {}, 'Título (es)', tEs), h('label', {}, 'Título (en)', tEn)),
+      h('div', { class: 'row', style: 'margin-top:8px' }, h('button', { class: 'btn green', onclick: (e) => run(e.target, async () => {
+        const chests = Object.fromEntries(Object.entries(ch).map(([k, i]) => [k, +i.value]).filter(([, v]) => v > 0));
+        const title = tEs.value || tEn.value ? { ...(tEs.value ? { es: tEs.value } : {}), ...(tEn.value ? { en: tEn.value } : {}) } : undefined;
+        if (!(+gems.value > 0) && !Object.keys(chests).length) throw new Error('Pon Rocío o algún cofre');
+        await api('grant', { user_id: id, gems: +gems.value, chests, kind: kind.value, note: note.value || undefined, title });
+        toast('Regalo creado: le llegará al abrir el juego'); openPlayer(id);
+      }) }, 'Enviar regalo')));
+    const reason = h('input', { placeholder: 'Motivo' });
+    const newName = h('input', { placeholder: 'Nuevo nombre (vacío = quitar nombre)' });
+    box.append(h('h3', {}, 'Moderación'),
+      h('div', { class: 'row' }, h('div', { style: 'flex:1' }, reason),
+        h('button', { class: p.banned ? 'btn green' : 'btn red', onclick: (e) => run(e.target, async () => { await api('ban', { user_id: id, banned: !p.banned, reason: reason.value || undefined }); toast(p.banned ? 'Desbaneado' : 'Baneado'); openPlayer(id); }) }, p.banned ? 'Quitar ban' : 'Banear')),
+      h('div', { class: 'row', style: 'margin-top:8px' }, h('div', { style: 'flex:1' }, newName),
+        h('button', { class: 'btn', onclick: (e) => run(e.target, async () => { await api('rename', { user_id: id, name: newName.value.trim() || null }); toast('Nombre cambiado'); openPlayer(id); }) }, 'Cambiar nombre')));
+    // historial
+    box.append(h('h3', {}, 'Monedero (últimos 30)'), h('div', { class: 'scroll' }, h('table', {}, h('tbody', {}, (d.wallet || []).map((w) => h('tr', {}, h('td', {}, date(w.created_at)), h('td', {}, h('span', { class: 'tag' }, w.kind)), h('td', {}, i18n(w.title) || w.note || ''), h('td', { class: 'num' }, `${w.amount_gems} 💧 ${Object.entries(w.chests || {}).map(([k, v]) => `${v}×${k}`).join(' ')}`), h('td', {}, w.claimed_at ? h('span', { class: 'tag green' }, 'recogido') : h('span', { class: 'tag gold' }, 'pendiente'))))))));
+    box.append(h('h3', {}, 'Retos'), h('div', { class: 'scroll' }, h('table', {}, h('tbody', {}, (d.runs || []).map((r) => h('tr', {}, h('td', {}, r.day), h('td', {}, `#${r.attempt}`), h('td', { class: 'num' }, r.score === null ? '—' : fmt(r.score)), h('td', {}, r.verified ? h('span', { class: 'tag green' }, `verificado · ${r.tier}`) : h('span', { class: 'tag red' }, r.reason || (r.finished_at ? 'no verificado' : 'sin terminar')))))))));
+    if ((d.reports || []).length) box.append(h('h3', {}, 'Denuncias recibidas'), h('ul', {}, d.reports.map((r) => h('li', {}, `${date(r.created_at)} · ${r.reason}${r.resolved_at ? ' (resuelta)' : ''}`))));
+    if ((d.gardens || []).length) box.append(h('h3', {}, 'Jardines públicos'), h('p', { class: 'muted' }, d.gardens.map((g) => `${g.b} (${g.n}x${g.n}, ${g.s.filter((x) => Array.isArray(x)).length} plantas)`).join(' · ')));
+  });
+}
+
+// ── Regalos para todos ──
+async function gifts(m) {
+  const f = {
+    tEs: h('input', { placeholder: '¡Feliz otoño!' }), tEn: h('input', { placeholder: 'Happy autumn!' }),
+    mEs: h('textarea', { placeholder: 'Mensaje (es)', style: 'min-height:70px' }), mEn: h('textarea', { placeholder: 'Message (en)', style: 'min-height:70px' }),
+    gems: h('input', { type: 'number', min: 0, max: 100000, value: 50 }),
+    starts: h('input', { type: 'datetime-local' }), ends: h('input', { type: 'datetime-local' }),
+    before: h('input', { type: 'datetime-local' }), after: h('input', { type: 'datetime-local' }),
+  };
+  const ch = Object.fromEntries(['wood', 'silver', 'gold', 'magic'].map((k) => [k, h('input', { type: 'number', min: 0, max: 50, value: 0 })]));
+  const iso = (i) => (i.value ? new Date(i.value).toISOString() : undefined);
+  const list = h('div', {}, h('p', { class: 'muted' }, 'Cargando…'));
+  m.append(h('div', { class: 'card' }, h('h2', {}, 'Nuevo regalo para todos'),
+    h('div', { class: 'cols' }, h('label', {}, 'Título (es)', f.tEs), h('label', {}, 'Título (en)', f.tEn), h('label', {}, 'Mensaje (es)', f.mEs), h('label', {}, 'Mensaje (en)', f.mEn)),
+    h('div', { class: 'cols4', style: 'margin-top:8px' }, h('label', {}, 'Rocío', f.gems), ...['wood', 'silver', 'gold', 'magic'].map((k) => h('label', {}, { wood: 'Madera', silver: 'Plata', gold: 'Oro', magic: 'Mágico' }[k], ch[k]))),
+    h('div', { class: 'cols', style: 'margin-top:8px' }, h('label', {}, 'Empieza (vacío = ya)', f.starts), h('label', {}, 'Termina (vacío = nunca)', f.ends),
+      h('label', {}, 'Solo jugadores que empezaron ANTES de… (compensación)', f.before), h('label', {}, 'Solo jugadores que empezaron DESPUÉS de…', f.after)),
+    h('p', { class: 'muted' }, 'Otros idiomas: la app usa el inglés si no hay traducción. Cada jugador lo recibe una sola vez, al abrir el juego.'),
+    h('button', { class: 'btn green', onclick: (e) => run(e.target, async () => {
+      if (!f.tEs.value && !f.tEn.value) throw new Error('Falta el título');
+      const title = { ...(f.tEs.value ? { es: f.tEs.value } : {}), ...(f.tEn.value ? { en: f.tEn.value } : {}) };
+      const message = f.mEs.value || f.mEn.value ? { ...(f.mEs.value ? { es: f.mEs.value } : {}), ...(f.mEn.value ? { en: f.mEn.value } : {}) } : undefined;
+      const chests = Object.fromEntries(Object.entries(ch).map(([k, i]) => [k, +i.value]).filter(([, v]) => v > 0));
+      await api('broadcast_create', { title, message, gems: +f.gems.value || 0, chests, starts_at: iso(f.starts), ends_at: iso(f.ends), max_created_at: iso(f.before), min_created_at: iso(f.after) });
+      toast('Regalo para todos creado'); show('gifts');
+    }) }, 'Crear regalo')),
+    h('div', { class: 'card' }, h('h2', {}, 'Regalos para todos'), list));
+  await run(null, async () => {
+    const rows = await api('broadcast_list');
+    list.innerHTML = '';
+    if (!rows.length) list.append(h('p', { class: 'muted' }, 'Ninguno todavía.'));
+    list.append(h('div', { class: 'scroll' }, h('table', {}, h('tbody', {}, rows.map((b) => {
+      const live = b.active && new Date(b.starts_at) <= new Date() && (!b.ends_at || new Date(b.ends_at) > new Date());
+      return h('tr', {}, h('td', {}, h('b', {}, i18n(b.title)), h('div', { class: 'muted' }, `${date(b.starts_at)} → ${b.ends_at ? date(b.ends_at) : '∞'}`)),
+        h('td', { class: 'num' }, `${b.gems} 💧 ${Object.entries(b.chests || {}).map(([k, v]) => `${v}×${k}`).join(' ')}`),
+        h('td', { class: 'num' }, `${fmt(b.claims)} recogidos`),
+        h('td', {}, live ? h('span', { class: 'tag green' }, 'activo') : h('span', { class: 'tag' }, b.active ? 'programado/terminado' : 'parado')),
+        h('td', {}, b.active ? h('button', { class: 'btn', onclick: (e) => confirm('¿Parar este regalo?') && run(e.target, async () => { await api('broadcast_end', { id: b.id }); show('gifts'); }) }, 'Parar') : ''));
+    })))));
+  });
+}
+
+// ── Configuración remota ──
+const TEMPLATES = {
+  flags: { challenge: true, rankings: true, gifts: true, cloud: true, friends: true, profile: true },
+  min_version: { ios: '1.3.0', android: '1.3.0', force: false, message: { es: 'Actualiza para seguir jugando online.', en: 'Update to keep playing online.' } },
+  motd: { id: 'novedades-1', title: { es: '¡Novedades!', en: 'News!' }, message: { es: 'Llegan el Reto diario y los rankings.', en: 'The Daily Challenge and rankings are here.' } },
+  events: { halloween: { from: '10-15', to: '11-05' }, xmas: { off: true } },
+  prices: { boost1h: 50, harvest: 40, chests: { silver: 60, gold: 160, magic: 400 } },
+  gardens: [{ id: 'r_bamboo', name: { es: 'Bosque de bambú', en: 'Bamboo grove' }, desc: { es: 'Calma y cañas que suenan con el viento.', en: 'Calm and rustling canes.' }, tier: 2, rules: ['calm'], themeFrom: 'zen', gems: 800,
+    event: { from: '05-01', to: '05-31', label: { es: 'Evento de primavera', en: 'Spring event' }, icon: 'blossom' },
+    species: [{ id: 'r_moss', base: 'zenmoss', name: { es: 'Musgo de bambú', en: 'Bamboo moss' } }, { id: 'r_shoot', base: 'bamboo', name: { es: 'Brote de bambú', en: 'Bamboo shoot' } }, { id: 'r_iris', base: 'iris', name: { es: 'Lirio azul', en: 'Blue iris' }, c2: '#6f8fe8' }, { id: 'r_cam', base: 'camellia', name: { es: 'Camelia blanca', en: 'White camellia' }, c2: '#ffffff' }, { id: 'r_sak', base: 'sakura', name: { es: 'Cerezo blanco', en: 'White cherry' }, c1: '#ffffff' }] }],
+};
+const CONF_HELP = {
+  flags: 'Activa/desactiva funciones online (por defecto, todas activas).',
+  min_version: 'Versión mínima por plataforma. force=true no deja cerrar el aviso.',
+  motd: 'Novedades: se muestran una vez por id (cambia el id para volver a mostrarlas).',
+  events: 'Fechas de los jardines de temporada (MM-DD) o {off: true} para desactivar uno.',
+  prices: 'Precios en Rocío de la tienda.',
+  gardens: 'Jardines nuevos hechos con piezas que ya están en la app (id con r_; especies con base = especie existente; themeFrom = bioma con tema, o bg = bioma dibujado). gems: precio en Rocío (0 = gratis).',
+};
+async function config(m) {
+  const list = h('div', {}, h('p', { class: 'muted' }, 'Cargando…'));
+  const key = h('input', { placeholder: 'clave (flags, motd…)' });
+  const ta = h('textarea', { spellcheck: 'false' });
+  const help = h('p', { class: 'muted' });
+  const msg = h('div');
+  const check = () => { try { JSON.parse(ta.value); msg.className = 'ok'; msg.textContent = 'JSON correcto (la forma la comprueba el servidor al guardar)'; return true; } catch (e) { msg.className = 'err'; msg.textContent = 'JSON no válido: ' + e.message; return false; } };
+  ta.addEventListener('input', check);
+  const edit = (k, v) => { key.value = k; ta.value = JSON.stringify(v, null, 2); help.textContent = CONF_HELP[k] || ''; check(); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+  m.append(h('div', { class: 'card' }, h('h2', {}, 'Configuración remota'), h('p', { class: 'muted' }, 'La app la lee al arrancar (y cada 30 min). Se valida en el servidor antes de guardar.'), list),
+    h('div', { class: 'card' }, h('h2', {}, 'Editar'),
+      h('div', { class: 'row' }, ...Object.keys(TEMPLATES).map((k) => h('button', { class: 'btn', onclick: () => edit(k, TEMPLATES[k]) }, 'Plantilla: ' + k))),
+      h('br'), h('label', {}, 'Clave', key), help, h('label', {}, 'Valor (JSON)', ta), msg,
+      h('div', { class: 'row', style: 'margin-top:8px' },
+        h('button', { class: 'btn green', onclick: (e) => check() && run(e.target, async () => { await api('config_set', { key: key.value.trim(), value: JSON.parse(ta.value) }); toast('Guardado'); show('config'); }) }, 'Guardar'),
+        h('button', { class: 'btn red', onclick: (e) => key.value && confirm(`¿Borrar la clave ${key.value}?`) && run(e.target, async () => { await api('config_delete', { key: key.value.trim() }); toast('Borrada'); show('config'); }) }, 'Borrar clave'))));
+  await run(null, async () => {
+    const rows = await api('config_list');
+    list.innerHTML = '';
+    if (!rows.length) list.append(h('p', { class: 'muted' }, 'Vacía: la app usa sus valores de fábrica.'));
+    for (const r of rows) list.append(h('div', { class: 'list-item', onclick: () => edit(r.key, r.value) }, h('b', {}, r.key), h('span', { class: 'muted', style: 'flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap' }, JSON.stringify(r.value)), h('span', { class: 'muted' }, date(r.updated_at))));
+  });
+}
+
+// ── Retos ──
+const BIOMES = ['garden', 'desert', 'reef', 'mystic', 'orchard', 'arctic', 'river', 'volcano', 'zen', 'forest', 'home', 'abyss', 'sky', 'moon'];
+const SIM_RULES = { thirst2: 'Sed x2', frost: 'Escarcha', nothirst: 'Sin sed', sunbeam: 'Rayo de sol', glow: 'Bioluminiscencia', ash: 'Ceniza fértil', lowgrav: 'Gravedad baja', luck: 'Suerte', harvest: 'Cosecha', calm: 'Calma' };
+async function challenges(m) {
+  const today = new Date().toISOString().slice(0, 10);
+  const list = h('div', {}, h('p', { class: 'muted' }, 'Cargando…'));
+  const day = h('input', { type: 'date', value: new Date(Date.now() + 86400e3).toISOString().slice(0, 10) });
+  const ta = h('textarea', { spellcheck: 'false', style: 'min-height:220px' });
+  const info = h('div');
+  const force = h('input', { type: 'checkbox' });
+  const quick = h('div', { class: 'cols', style: 'margin:8px 0' });
+  let def = null;
+  const setDef = (d, bot) => {
+    def = d; ta.value = JSON.stringify(d, null, 1);
+    info.innerHTML = '';
+    info.append(h('p', {}, h('b', {}, d.biome), ` · ${d.duration} s · reglas: ${d.rules.map((r) => SIM_RULES[r] || r).join(', ') || '—'} · especies: ${d.species.join(', ')}`),
+      h('p', {}, 'Premios: ', d.tiers.map((t, i) => `${['🥉', '🥈', '🥇'][i] || i + 1} ${fmt(t.score)} → ${t.gems} 💧 ${Object.entries(t.chests || {}).map(([k, v]) => `${v}×${k}`).join(' ')}`).join(' · ')),
+      bot !== undefined ? h('p', { class: 'muted' }, `Bot de referencia (5 toques/s): ${fmt(bot)} puntos`) : '');
+    quick.innerHTML = '';
+    const biome = h('select', {}, BIOMES.map((b) => h('option', { value: b }, b))); biome.value = d.biome;
+    const dur = h('input', { type: 'number', min: 15, max: 1800, value: d.duration });
+    const rules = h('div', { class: 'row' }, Object.entries(SIM_RULES).map(([r, n]) => h('label', { style: 'flex-direction:row;align-items:center;gap:4px' }, h('input', { type: 'checkbox', value: r, ...(d.rules.includes(r) ? { checked: true } : {}) }), n)));
+    quick.append(h('label', {}, 'Bioma (arte + 5 especies)', biome), h('label', {}, 'Duración (s)', dur), h('label', { style: 'grid-column: 1 / -1' }, 'Reglas (máx. 3)', rules),
+      h('div', { class: 'row', style: 'grid-column: 1 / -1' }, h('button', { class: 'btn blue', onclick: (e) => run(e.target, async () => {
+        const nd = JSON.parse(ta.value);
+        nd.duration = +dur.value;
+        nd.rules = [...rules.querySelectorAll('input:checked')].map((i) => i.value).slice(0, 3);
+        if (biome.value !== nd.biome) { nd.biome = biome.value; nd.species = SPECIES_OF[biome.value]; }
+        const r = await api('challenge_preview', { day: day.value, def: nd, recalibrate: true });
+        setDef(r.def, r.bot); toast('Premios recalibrados con el bot');
+      }) }, 'Aplicar cambios y recalibrar premios')));
+  };
+  m.append(h('div', { class: 'card' }, h('h2', {}, 'Retos (±14 días)'), list),
+    h('div', { class: 'card' }, h('h2', {}, 'Crear / editar reto'),
+      h('div', { class: 'row' }, h('label', { style: 'flex:1' }, 'Día (UTC)', day),
+        h('button', { class: 'btn', onclick: (e) => run(e.target, async () => { const r = await api('challenge_preview', { day: day.value }); setDef(r.def, r.bot); }) }, 'Generar automático')),
+      quick, info, h('label', {}, 'Definición (JSON)', ta),
+      h('div', { class: 'row', style: 'margin-top:8px' },
+        h('button', { class: 'btn', onclick: (e) => run(e.target, async () => { const r = await api('challenge_preview', { day: day.value, def: JSON.parse(ta.value) }); setDef(r.def, r.bot); toast('Reto válido'); }) }, 'Comprobar'),
+        h('button', { class: 'btn green', onclick: (e) => run(e.target, async () => { const d = JSON.parse(ta.value); d.day = day.value; await api('challenge_set', { day: day.value, def: d, force: force.checked }); toast('Reto guardado'); show('challenges'); }) }, 'Guardar'),
+        h('label', { style: 'flex-direction:row;align-items:center;gap:4px' }, force, 'forzar (día pasado)'),
+        h('button', { class: 'btn red', onclick: (e) => confirm('¿Borrar el reto de ese día? (solo si nadie lo ha jugado)') && run(e.target, async () => { await api('challenge_delete', { day: day.value }); toast('Borrado'); show('challenges'); }) }, 'Borrar'))));
+  await run(null, async () => {
+    const rows = await api('challenge_list');
+    list.innerHTML = '';
+    if (!rows.length) list.append(h('p', { class: 'muted' }, 'No hay retos guardados en estas fechas (se generan solos cada noche o al primer jugador).'));
+    list.append(h('div', { class: 'scroll' }, h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Día'), h('th', {}, 'Bioma'), h('th', {}, 'Reglas'), h('th', { class: 'num' }, 'Duración'), h('th', { class: 'num' }, 'Oro'), h('th', { class: 'num' }, 'Partidas'))),
+      h('tbody', {}, rows.map((c) => h('tr', { class: 'list-item', onclick: () => { day.value = c.day; setDef(c.def); quick.scrollIntoView({ behavior: 'smooth' }); } },
+        h('td', {}, c.day, c.day === today ? ' ' : '', c.day === today ? h('span', { class: 'tag green' }, 'hoy') : ''), h('td', {}, c.def.biome), h('td', {}, (c.def.rules || []).map((r) => SIM_RULES[r] || r).join(', ')),
+        h('td', { class: 'num' }, `${c.def.duration} s`), h('td', { class: 'num' }, fmt(c.def.tiers?.[c.def.tiers.length - 1]?.score)), h('td', { class: 'num' }, `${c.finished}/${c.runs}`)))))));
+  });
+}
+const SPECIES_OF = {
+  garden: ['clover', 'daisy', 'tulip', 'sunflower', 'rose'], desert: ['succulent', 'aloe', 'cactus', 'lithops', 'agave'], reef: ['seagrass', 'kelp', 'coral', 'anemone', 'pearl'],
+  mystic: ['mushroom', 'moonflower', 'crystal', 'voidrose', 'bonsai'], orchard: ['lettuce', 'carrot', 'tomato', 'zucchini', 'strawberry'], arctic: ['icemoss', 'snowdrop', 'arcticpoppy', 'frostfern', 'iceflower'],
+  river: ['reed', 'waterlily', 'riveriris', 'willow', 'lotus'], volcano: ['ashgrass', 'firelily', 'obsidiancactus', 'emberfern', 'magmaflower'], zen: ['zenmoss', 'bamboo', 'iris', 'camellia', 'sakura'],
+  forest: ['fern', 'forestshroom', 'oak', 'pine', 'sequoia'], home: ['pothos', 'monstera', 'windowcactus', 'orchid', 'ficus'], abyss: ['glowalgae', 'lightanemone', 'ghostcoral', 'sealily', 'pearltree'],
+  sky: ['cloudmoss', 'windbell', 'featherfern', 'skyorchid', 'cloudtree'], moon: ['stardust', 'craterbloom', 'starcactus', 'nebularose', 'moontree'],
+};
+
+// ── Denuncias ──
+async function reports(m) {
+  const open = h('input', { type: 'checkbox', checked: true });
+  const list = h('div');
+  const load = () => run(null, async () => {
+    const rows = await api('reports', { open: open.checked });
+    list.innerHTML = '';
+    if (!rows.length) list.append(h('p', { class: 'muted' }, 'Nada pendiente. 🌿'));
+    for (const r of rows) list.append(h('div', { class: 'list-item' },
+      h('span', { class: 'tag' + (r.reason === 'cheat' ? ' red' : '') }, r.reason), h('b', { onclick: () => openPlayer(r.target) }, r.target_name || '(sin nombre)'), r.target_banned ? h('span', { class: 'tag red' }, 'baneado') : '',
+      h('span', { class: 'muted', style: 'margin-left:auto' }, date(r.created_at)),
+      h('button', { class: 'btn', onclick: () => openPlayer(r.target) }, 'Ver'),
+      !r.resolved_at ? h('button', { class: 'btn green', onclick: (e) => run(e.target, async () => { await api('report_resolve', { id: r.id, resolution: 'revisado' }); load(); }) }, 'Resuelta') : h('span', { class: 'tag green' }, 'resuelta')));
+  });
+  open.onchange = load;
+  m.append(h('div', { class: 'card' }, h('h2', {}, 'Denuncias'), h('label', { style: 'flex-direction:row;align-items:center;gap:6px' }, open, 'Solo abiertas'), list));
+  load();
+}
+
+// ── Auditoría ──
+async function audit(m) {
+  const box = h('div', { class: 'card' }, h('h2', {}, 'Auditoría (últimas 200 acciones)'), h('p', { class: 'muted' }, 'Cargando…'));
+  m.append(box);
+  await run(null, async () => {
+    const rows = await api('audit', { limit: 200 });
+    box.lastChild.remove();
+    box.append(h('div', { class: 'scroll' }, h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'Cuándo'), h('th', {}, 'Acción'), h('th', {}, 'Jugador'), h('th', {}, 'Datos'))),
+      h('tbody', {}, rows.map((r) => h('tr', {}, h('td', {}, date(r.created_at)), h('td', {}, h('span', { class: 'tag' }, r.action)), h('td', {}, r.target_user ? h('a', { href: '#', onclick: (e) => { e.preventDefault(); openPlayer(r.target_user); } }, r.target_user.slice(0, 8)) : ''),
+        h('td', { class: 'muted' }, JSON.stringify(r.args || {}).slice(0, 160))))))));
+  });
+}
+
+init();
+</script>
+</body>
+</html>

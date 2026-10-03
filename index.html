@@ -1,94 +1,76 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Francisco Martínez</title>
-    <meta name="description" content="Página personal de Francisco Martínez">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="bower_components/materialize/css/materialize.min.css"  media="screen,projection"/>
-    <!--Import css custom-->
-    <link rel="stylesheet" href="static/css/app.css">
-    <link rel="stylesheet" href="static/css/style.css">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-  <body ng-app="myApp">
-    <!-- Navigation -->
-    <nav class="light-blue darken-4 nav-header z-depth-5" role="navigation">
-      <div class="nav-wrapper container"><a id="logo-container" href="#/" class="brand-logo">Francisco Martínez</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#/proyectos">Proyectos</a></li>
-          <li><a href="#/contacto">Contacto</a></li>
-        </ul>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>PacoGames · Juegos pequeños hechos con cariño</title>
+<meta name="description" content="PacoGames: juegos pequeños y relajantes para iPhone, Android y PC." />
+<meta property="og:title" content="PacoGames" />
+<meta property="og:description" content="Juegos pequeños y relajantes para iPhone, Android y PC." />
+<meta property="og:image" content="https://pacomar.github.io/zengarden/icon.png" />
+<meta name="theme-color" content="#fff8ec" />
+<link rel="icon" href="zengarden/icon.png" />
+<style>
+  :root { --ink:#4a3428; --ink2:#8a6d5a; --bg:#fff8ec; --card:#fffdf8; --line:#ecdcc4; --green:#4f9a49; --chip:#f6ecdb; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#f3e6d6; --ink2:#c2ab95; --bg:#1d1814; --card:#28211b; --line:#3d3229; --green:#7cc472; --chip:#342a22; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:ui-rounded,'SF Pro Rounded','Nunito',system-ui,-apple-system,'Segoe UI',sans-serif; line-height:1.5; }
+  .wrap { max-width:880px; margin:0 auto; padding:40px 16px 56px; }
+  header h1 { font-size:clamp(34px,7vw,52px); margin:0; letter-spacing:.5px; }
+  header p { color:var(--ink2); font-size:18px; margin:6px 0 32px; max-width:520px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px; }
+  .game { background:var(--card); border:2px solid var(--line); border-radius:24px; padding:20px; display:flex; flex-direction:column; gap:10px; }
+  .game .top { display:flex; gap:14px; align-items:center; }
+  .game img, .game .ph { width:64px; height:64px; border-radius:16px; border:2px solid var(--line); flex:none; }
+  .game .ph { display:grid; place-items:center; font-weight:800; font-size:26px; background:var(--chip); color:var(--ink2); }
+  .game h2 { margin:0; font-size:21px; }
+  .game .kind { color:var(--ink2); font-size:14px; }
+  .game p { margin:0; font-size:15px; flex:1; }
+  .links { display:flex; flex-wrap:wrap; gap:8px; }
+  .links a, .links span { font-size:14px; font-weight:700; text-decoration:none; padding:8px 12px; border-radius:12px; }
+  .links a { background:var(--green); color:#fff; }
+  .links span { background:var(--chip); color:var(--ink2); }
+  footer { margin-top:48px; color:var(--ink2); font-size:14px; display:flex; flex-wrap:wrap; gap:16px; }
+  footer a { color:inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>PacoGames</h1>
+    <p>Juegos pequeños, tranquilos y hechos con cariño. Para jugar un rato y volver mañana.</p>
+  </header>
 
-        <ul id="nav-mobile" class="side-nav">
-          <li><a href="#/proyectos">Proyectos</a></li>
-          <li><a href="#/contacto">Contacto</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  <!-- Para añadir un juego: copia un <article> y cambia nombre, icono, texto y enlaces -->
+  <main class="grid">
+    <article class="game">
+      <div class="top">
+        <img src="zengarden/icon.png" alt="" />
+        <div><h2>ZenGarden</h2><div class="kind">Idle relajante · iPhone y Android</div></div>
       </div>
-    </nav>
-
-    <main ng-view class="wrapper-contenido"></main>
-
-    <footer class="page-footer orange">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Descripción Personal</h5>
-            <p class="grey-text text-lighten-4">Soy un desarrollador web joven con algo mas de 2 años de experiencia en este sector que aprende rápido y sabe de bastantes tecnologías, tanto backend como frontend.</p>
-
-
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-          <div class="col l3 s12">
-            <h5 class="white-text">Connect</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
+      <p>Cultiva jardines, colecciona plantas y macetas y llena el mundo de oxígeno a tu ritmo.</p>
+      <div class="links">
+        <a href="https://apps.apple.com/app/id6766254802">App Store</a>
+        <span>Google Play · muy pronto</span>
+        <a href="zengarden/">Más</a>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          Hecho por <a class="orange-text text-lighten-3" href="http://pacomar.github.io">Francisco Martínez</a>
-        </div>
+    </article>
+
+    <article class="game">
+      <div class="top">
+        <div class="ph" aria-hidden="true">CC</div>
+        <div><h2>Crypt Crew</h2><div class="kind">Auto-battler de mazmorras · móvil</div></div>
       </div>
-    </footer>
+      <p>Forma tu cuadrilla y baja cada vez más hondo en la cripta.</p>
+      <div class="links"><span>En desarrollo</span></div>
+    </article>
+  </main>
 
-    <!-- In production use:
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-    -->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
-    <script type="text/javascript" src="bower_components/materialize/js/materialize.min.js"></script>
-
-    <script type="text/javascript" src="app.js"></script>
-
-    <script type="text/javascript" src="services/conocimientos.js"></script>
-    <script type="text/javascript" src="services/proyectos.js"></script>
-
-    <script type="text/javascript" src="controllers/proyectos.js"></script>
-    <script type="text/javascript" src="controllers/contacto.js"></script>
-    <script type="text/javascript" src="controllers/conocimientos.js"></script>
-
-    <script type="text/javascript" src="static/js/init.js"></script>
-
-    <script type="text/javascript" src="components/version/version.js"></script>
-    <script type="text/javascript" src="components/version/version-directive.js"></script>
-    <script type="text/javascript" src="components/version/interpolate-filter.js"></script>
-  </body>
+  <footer>
+    <span>© PacoGames</span>
+    <a href="privacy.html">Privacidad</a>
+    <a href="mailto:francisco.mar.esp@gmail.com">Contacto</a>
+  </footer>
+</div>
+</body>
 </html>
