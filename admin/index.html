@@ -84,8 +84,8 @@ pre { background: var(--soft); border-radius: 10px; padding: 10px; overflow: aut
 <div id="toast" class="toast hide"></div>
 
 <script>
-// ── Configuración: URL y clave PÚBLICA del proyecto (se pueden escribir aquí o en el formulario) ──
-const DEFAULTS = { url: 'https://pjgxqdwbtkxbzqqydmqx.supabase.co', anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqZ3hxZHdidGt4YnpxcXlkbXF4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwMzc2ODEsImV4cCI6MjEwNjYxMzY4MX0.XYx0NzhW5ZXecEd9k2oIA6tZFkPiS6CAbpim7Ty1cWE', game: 'zengarden' };
+// Sin URL ni clave en el código: se piden la primera vez y se guardan en este navegador (localStorage)
+const DEFAULTS = { url: '', anonKey: '', game: 'zengarden' };
 const LS = 'pg.admin.conf';
 const conf = Object.assign({}, DEFAULTS, (() => { try { return JSON.parse(localStorage.getItem(LS) || '{}'); } catch { return {}; } })());
 let sb = null, me = null, role = null, tab = 'dash';
